@@ -9,6 +9,11 @@ public class Countdown : MonoBehaviour {
     private float count = 20;
     public GameObject varillinen;
     public GameObject variton;
+    public GameObject variton2;
+    public GameObject variton3;
+    public GameObject variton4;
+    public GameObject colorWheel;
+    public Text colorText;
 
     // Update is called once per frame
     void Update(){
@@ -19,8 +24,11 @@ public class Countdown : MonoBehaviour {
         else if ((int)count == 0){
             varillinen.SetActive(false); 
             variton.SetActive(true);
-            varillinen.GetComponent<Renderer>().enabled = false;
-            variton.GetComponent<Renderer>().enabled = true;
+            variton2.SetActive(true);
+            variton3.SetActive(true);
+            variton4.SetActive(true);
+            colorWheel.SetActive(true);
+            colorText.gameObject.SetActive(true);
         }
     }
 }
