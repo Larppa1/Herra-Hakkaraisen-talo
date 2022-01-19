@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour {
     public Text countdowntext;
-    private float count = 1;
+    private float count = 20;
     public GameObject varillinen;
     public GameObject variton;
     public GameObject variton2;
