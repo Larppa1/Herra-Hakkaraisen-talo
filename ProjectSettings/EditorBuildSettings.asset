@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Kartta.unity
     guid: 45866fda79eb3ca4790d9bec653b360b
+  - enabled: 1
+    path: Assets/Autopiha.unity
+    guid: 4b31676f57ebee04cb44213e29731af4
+  - enabled: 1
+    path: Assets/Herra Hakkaraisen koti.unity
+    guid: 6408f377d387d0f4da088fd10889da94
   m_configObjects: {}
