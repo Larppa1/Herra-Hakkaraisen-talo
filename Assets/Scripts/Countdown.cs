@@ -22,7 +22,7 @@ public class Countdown : MonoBehaviour {
             countdowntext.text = ((int)count).ToString();
         }
         else if ((int)count == 0){
-            varillinen.SetActive(false); 
+            varillinen.SetActive(false);
             variton.SetActive(true);
             variton2.SetActive(true);
             variton3.SetActive(true);

@@ -389,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 845105167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.71, y: -0.7889731, z: -0.21907938}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 988239625}
   m_Father: {fileID: 2146379568}
@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 10
+  i: 0
 --- !u!50 &845105170
 Rigidbody2D:
   serializedVersion: 4
@@ -560,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948729376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.77399, y: -0.06952816, z: 0.38383305}
+  m_LocalPosition: {x: 11.3, y: -0.06952816, z: 0.38383305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2146379568}
@@ -581,9 +582,9 @@ MonoBehaviour:
   obstacle: {fileID: 5626512776823154206, guid: a99e7668be0c39a488ceea23a3b1d380, type: 3}
   maxX: 7
   minX: 5.5
-  maxY: 3
-  minY: -4
-  timeBetweenSpawn: 0.8
+  maxY: 2.5
+  minY: -3.5
+  timeBetweenSpawn: 1
 --- !u!1 &988239623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c199564aaea61af409bb9879ed81bd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 20
+  cameraSpeed: 15
 --- !u!114 &2146379570
 MonoBehaviour:
   m_ObjectHideFlags: 0

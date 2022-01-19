@@ -16,16 +16,9 @@ public class SpawnObstacles : MonoBehaviour
     {
         if (Time.time > spawnTime)
         {
-            Spawn();
+            float randomY = Random.Range(minY, maxY);
+            Instantiate(obstacle, transform.position = new Vector2(10, randomY), transform.rotation);
             spawnTime = Time.time + timeBetweenSpawn;
         }
-    }
-
-    void Spawn()
-    {
-        float randomX = Random.Range(minX, maxX);
-        float randomY = Random.Range(minY, maxY);
-
-        Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }
