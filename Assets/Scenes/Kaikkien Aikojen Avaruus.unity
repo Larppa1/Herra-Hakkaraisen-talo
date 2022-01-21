@@ -371,8 +371,8 @@ GameObject:
   m_Component:
   - component: {fileID: 845105168}
   - component: {fileID: 845105170}
-  - component: {fileID: 845105169}
   - component: {fileID: 845105171}
+  - component: {fileID: 845105169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -404,11 +404,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 845105167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a69df40160d7242afdaca7b587783f, type: 3}
+  m_Script: {fileID: 11500000, guid: f043a06a0debbba40ae78b320c75813e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
-  i: 0
+  playerSpeed: 15
 --- !u!50 &845105170
 Rigidbody2D:
   serializedVersion: 4
@@ -583,7 +582,7 @@ MonoBehaviour:
   maxX: 7
   minX: 5.5
   maxY: 2.5
-  minY: -3.5
+  minY: -3.55
   timeBetweenSpawn: 1
 --- !u!1 &988239623
 GameObject:
@@ -1498,7 +1497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913280326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.042, z: 0}
+  m_LocalPosition: {x: 0, y: 5.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611850647}
