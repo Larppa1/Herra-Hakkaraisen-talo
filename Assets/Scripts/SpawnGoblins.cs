@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TIKO4A2021{
 public class SpawnGoblins : MonoBehaviour
 {
     public GameObject obstacle;
@@ -22,4 +23,5 @@ public class SpawnGoblins : MonoBehaviour
             spawnTime = Time.time + timeBetweenSpawn;
         }
     }
+}
 }

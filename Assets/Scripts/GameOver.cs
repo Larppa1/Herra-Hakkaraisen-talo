@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+namespace TIKO4A2021{
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
@@ -20,4 +20,5 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+}
 }

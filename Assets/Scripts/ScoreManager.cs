@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace TIKO4A2021{
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
@@ -18,5 +19,9 @@ public class ScoreManager : MonoBehaviour
                 scoreText.text = ((int)score).ToString();
             }
         }
+        else{
+            scoreText.enabled = false;
+        }
     }
+}
 }

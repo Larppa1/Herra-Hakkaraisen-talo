@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+namespace TIKO4A2021{
 public class ColouringManager : MonoBehaviour{
     public GameObject clickedImage;
     void OnMouseDown(){
@@ -13,4 +13,5 @@ public class ColouringManager : MonoBehaviour{
             case "bottomright": clickedImage.GetComponent<SpriteRenderer>().material.color = Color.blue; break;
         }
     }
+}
 }

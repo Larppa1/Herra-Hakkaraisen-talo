@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TIKO4A2021{
 public class Bus : MonoBehaviour
 {
     public float playerSpeed;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D busBody;
     private Vector2 playerDirection;
-    public int i = 0;
+    private int i = 0;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        busBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -44,6 +45,7 @@ public class Bus : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidbody.velocity = new Vector2(0, playerDirection.y * playerSpeed);
+        busBody.velocity = new Vector2(0, playerDirection.y * playerSpeed);
     }
+}
 }

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace TIKO4A2021{
 public class Goblin : MonoBehaviour
 {
     public float goblinSpeed;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D goblinBody;
     private Vector2 goblinDirection;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        goblinBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -21,7 +22,7 @@ public class Goblin : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidbody.velocity = new Vector2(goblinDirection.x * goblinSpeed, 0);
+        goblinBody.velocity = new Vector2(goblinDirection.x * goblinSpeed, 0);
     }
 
     void OnMouseDown()
@@ -36,4 +37,5 @@ public class Goblin : MonoBehaviour
             goblinSpeed = 0;
         }
     }
+}
 }

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TIKO4A2021{
 public class Obstacle : MonoBehaviour
 {
     private GameObject player;
     private Vector2 obstacleDirection;
     public float obstacleSpeed;
-    private Rigidbody2D rigidbody;
-    private float fixedUpdateCount = 20;
+    private Rigidbody2D obstacleBody;
     private int frameCount = 0;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        obstacleBody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -27,7 +27,7 @@ public class Obstacle : MonoBehaviour
     }
 
     void FixedUpdate() {
-        rigidbody.velocity = new Vector2(obstacleDirection.x * obstacleSpeed, 0);
+        obstacleBody.velocity = new Vector2(obstacleDirection.x * obstacleSpeed, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,4 +40,5 @@ public class Obstacle : MonoBehaviour
             Destroy(player.gameObject);
         }
     }
+}
 }

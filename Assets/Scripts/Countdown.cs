@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+namespace TIKO4A2021{
 public class Countdown : MonoBehaviour {
     public Text countdowntext;
     private float count = 20;
@@ -29,4 +29,5 @@ public class Countdown : MonoBehaviour {
             colorWheel.SetActive(true);
         }
     }
+}
 }
