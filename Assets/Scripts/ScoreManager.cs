@@ -17,11 +17,6 @@ public class ScoreManager : MonoBehaviour
                 score += 1 * Time.deltaTime;
                 scoreText.text = ((int)score).ToString();
             }
-        }else
-        {
-            scoreText.transform.position = new Vector3(1250, 1120, 2);
-            scoreText.fontSize = 30;
-            scoreText.text = "Your score: " + ((int)score).ToString();
         }
     }
 }

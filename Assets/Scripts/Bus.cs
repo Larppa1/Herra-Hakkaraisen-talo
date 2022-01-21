@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Bus : MonoBehaviour
 {
     public float playerSpeed;
     private Rigidbody2D rigidbody;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     {
         float directionY = Input.GetAxisRaw("Vertical");
         playerDirection = new Vector2(0, directionY).normalized;
+
         if(Input.GetKey("up") && i == 0) {
             Quaternion current = transform.rotation;
             Quaternion target = Quaternion.Euler(new Vector3(0, 0, 50));

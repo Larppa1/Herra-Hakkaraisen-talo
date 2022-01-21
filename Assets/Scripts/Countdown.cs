@@ -13,7 +13,6 @@ public class Countdown : MonoBehaviour {
     public GameObject variton3;
     public GameObject variton4;
     public GameObject colorWheel;
-    public Text colorText;
 
     // Update is called once per frame
     void Update(){
@@ -28,7 +27,6 @@ public class Countdown : MonoBehaviour {
             variton3.SetActive(true);
             variton4.SetActive(true);
             colorWheel.SetActive(true);
-            colorText.gameObject.SetActive(true);
         }
     }
 }

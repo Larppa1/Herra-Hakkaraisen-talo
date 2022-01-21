@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Colouringmanager : MonoBehaviour{
+public class ColouringManager : MonoBehaviour{
     public GameObject clickedImage;
     void OnMouseDown(){
         switch(clickedImage.name){
