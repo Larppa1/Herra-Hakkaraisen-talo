@@ -12,7 +12,6 @@ namespace TIKO4A2021 {
         public GameObject variton2;
         public GameObject variton3;
         public GameObject variton4;
-        public GameObject colorWheel;
 
         void Update() {
             if(count>0){
@@ -24,7 +23,6 @@ namespace TIKO4A2021 {
                 variton2.SetActive(true);
                 variton3.SetActive(true);
                 variton4.SetActive(true);
-                colorWheel.SetActive(true);
             }
         }
     }

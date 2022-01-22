@@ -43,5 +43,16 @@ namespace TIKO4A2021 {
         void FixedUpdate() {
             busBody.velocity = new Vector2(0, playerDirection.y * playerSpeed);
         }
+
+        private void OnTriggerEnter2D(Collider2D collision) {
+            if(collision.tag == "Coin") {
+                CoinCount.amount += 5;
+            }else if(collision.tag == "Coin2") {
+                CoinCount.amount += 10;
+            }else if(collision.tag == "Coin3") {
+                CoinCount.amount += 15;
+            }
+            Debug.Log(CoinCount.amount);
+        }
     }
 }

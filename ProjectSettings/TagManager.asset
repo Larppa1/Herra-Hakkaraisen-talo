@@ -7,6 +7,9 @@ TagManager:
   - Border
   - Goblin
   - Dragon
+  - Coin
+  - Coin2
+  - Coin3
   layers:
   - Default
   - TransparentFX

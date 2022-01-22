@@ -30,6 +30,7 @@ namespace TIKO4A2021 {
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if(collision.tag == "Border") {
+                MeteorProperties.meteorCount++;
                 Destroy(this.gameObject);
             }else if(collision.tag == "Player") {
                 Destroy(player.gameObject);
