@@ -8,6 +8,7 @@ namespace TIKO4A2021 {
         public float goblinSpeed;
         private Rigidbody2D goblinBody;
         private Vector2 goblinDirection;
+        private bool isHit = false;
 
         void Start() {
             goblinBody = GetComponent<Rigidbody2D>();
@@ -19,6 +20,9 @@ namespace TIKO4A2021 {
 
         void FixedUpdate() {
             goblinBody.velocity = new Vector2(goblinDirection.x * goblinSpeed, 0);
+            if(isHit) {
+                goblinSpeed = (float) GoblinSpeed.speed;
+            }
         }
 
         void OnMouseDown() {
@@ -27,7 +31,8 @@ namespace TIKO4A2021 {
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if (collision.tag == "Dragon") {
-                goblinSpeed = 0;
+                DragonSpeed.speed += (float) 0.05;
+                isHit = true;
             }
         }
     }
