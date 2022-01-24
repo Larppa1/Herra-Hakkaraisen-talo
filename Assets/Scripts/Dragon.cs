@@ -20,7 +20,7 @@ namespace TIKO4A2021 {
         }
 
         void Update() {
-            if(gameObject.transform.position.x < -4.1) {
+            if(gameObject.transform.position.x < -4) {
                 gameOverPanel.SetActive(true);
             }
         }
