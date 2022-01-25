@@ -5,8 +5,6 @@ using UnityEngine;
 namespace TIKO4A2021 {
     public class Obstacle : MonoBehaviour{
         private GameObject player;
-        private Vector2 obstacleDirection;
-        public float obstacleSpeed;
         private Rigidbody2D obstacleBody;
         private int frameCount = 0;
 
@@ -16,16 +14,11 @@ namespace TIKO4A2021 {
         }
 
         void Update() {
-            obstacleDirection = new Vector2(-1, 0).normalized;
             if(frameCount % 4 == 0) {
                 transform.Rotate(0, 0, 1);
                 frameCount = 1;
             }
             frameCount++;
-        }
-
-        void FixedUpdate() {
-            obstacleBody.velocity = new Vector2(obstacleDirection.x * obstacleSpeed, 0);
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {

@@ -6,7 +6,7 @@ namespace TIKO4A2021 {
         public float cameraSpeed;
 
         void Update() {
-            transform.position = new Vector2(cameraSpeed * Time.deltaTime, 0);
+            transform.position += new Vector3(cameraSpeed * Time.deltaTime, 0, 0);
         }
     }
 }
