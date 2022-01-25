@@ -10,8 +10,9 @@ namespace TIKO4A2021 {
         private Vector2 goblinDirection;
         private float xPos;
         private float yPos;
-        private Vector2 mousePos;
+        private Vector2 cagePos;
         private bool isHit = false;
+        private bool isCaught = false;
         private int hitCount = 0;
 
         void Start() {
@@ -19,7 +20,15 @@ namespace TIKO4A2021 {
         }
 
         void Update() {
-            goblinDirection = new Vector2(-1, 0).normalized;
+            if(isCaught) {
+                cagePos = PlungerProperties.position;
+                transform.position = new Vector2(cagePos.x - xPos, cagePos.y - yPos);
+            }else {
+                goblinDirection = new Vector2(-1, 0).normalized;
+            }
+            
+            xPos = PlungerProperties.position.x - transform.position.x;
+            yPos = PlungerProperties.position.y - transform.position.y;
         }
 
         void FixedUpdate() {
@@ -31,15 +40,15 @@ namespace TIKO4A2021 {
             }
         }
 
-        void OnMouseDown() {
-            xPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
-            yPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+        /*void OnMouseDown() {
+            xPos = Camera.main.ScreenToWorldPoint(CageProperties.position).x - transform.position.x;
+            yPos = Camera.main.ScreenToWorldPoint(CageProperties.position).y - transform.position.y;
         }
 
         void OnMouseDrag() {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector2(mousePos.x - xPos, mousePos.y - yPos);
-        }
+        }*/
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if (collision.tag == "Dragon") {
@@ -48,6 +57,9 @@ namespace TIKO4A2021 {
                     DragonSpeed.speed += (float) 0.05;
                 }
                 isHit = true;
+            }else if(collision.tag == "Plunger") {
+                isCaught = true;
+                PlungerProperties.isCaught = true;
             }
         }
 
