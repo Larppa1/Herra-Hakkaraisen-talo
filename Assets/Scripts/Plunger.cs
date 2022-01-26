@@ -10,8 +10,6 @@ namespace TIKO4A2021
         public float plungerSpeed;
         public GameObject enemy;
         private Rigidbody2D plungerBody;
-        private int count = 0;
-        private bool isRemoved = true;
 
         void Start(){
             plungerBody = GetComponent<Rigidbody2D>();
@@ -26,25 +24,14 @@ namespace TIKO4A2021
             }
 
             if(transform.position.y > 3 && PlungerProperties.isCaught) {
-                if(count == 0) {
+                if(PlungerProperties.isDestroyed == false) {
                     transform.DOMove(new Vector2(transform.position.x, 10), 1).SetLoops(2, LoopType.Yoyo);
-                    isRemoved = false;
+                    PlungerProperties.isDestroyed = true;
                 }
-                count++;
             }
         }
         void FixedUpdate(){
             plungerBody.velocity = new Vector2(plungerDirection.x * plungerSpeed, 0);
-        }
-
-        private void OnTriggerStay2D(Collider2D collision) {
-            if(collision.tag == "Goblin") {
-                if(transform.position.y > 8 && isRemoved == false) {
-                    //Destroy enemy
-                    //isRemoved = true;
-                    //PlungerProperties.isCaught = false;
-                }
-            }
         }
     }
 }

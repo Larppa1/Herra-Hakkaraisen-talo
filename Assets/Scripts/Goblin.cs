@@ -34,38 +34,27 @@ namespace TIKO4A2021 {
         void FixedUpdate() {
             goblinBody.velocity = new Vector2(goblinDirection.x * goblinSpeed, 0);
             if(isHit) {
-                goblinSpeed = (float) GoblinSpeed.speed;
+                goblinSpeed = (float) DragonSpeed.speed;
             }else {
                 goblinSpeed = 3;
             }
         }
-
-        /*void OnMouseDown() {
-            xPos = Camera.main.ScreenToWorldPoint(CageProperties.position).x - transform.position.x;
-            yPos = Camera.main.ScreenToWorldPoint(CageProperties.position).y - transform.position.y;
-        }
-
-        void OnMouseDrag() {
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(mousePos.x - xPos, mousePos.y - yPos);
-        }*/
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if (collision.tag == "Dragon") {
                 hitCount++;
                 if(hitCount == 1) {
                     DragonSpeed.speed += (float) 0.05;
+                    isHit = true;
                 }
-                isHit = true;
             }else if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D collision) {
-            if (collision.tag == "Dragon") {
-                isHit = false;
+            }else if(collision.tag == "Border") {
+                Destroy(this.gameObject);
+                isCaught = false;
+                PlungerProperties.isCaught = false;
+                PlungerProperties.isDestroyed = false;
             }
         }
     }
