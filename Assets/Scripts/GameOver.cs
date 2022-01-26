@@ -10,10 +10,10 @@ namespace TIKO4A2021 {
         void Update() {
             if(GameObject.FindGameObjectWithTag("Player") == null) {
                 isPaused = true;
-                gameOverPanel.SetActive(true);
                 MeteorProperties.coinCount = 0;
                 MeteorProperties.meteorCount = 0;
                 CoinCount.amount = 0;
+                gameOverPanel.SetActive(true);
             }
 
             if(isPaused) {

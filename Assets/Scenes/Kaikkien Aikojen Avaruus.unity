@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 462335230}
   - component: {fileID: 462335231}
+  - component: {fileID: 462335232}
   m_Layer: 0
   m_Name: bus-wheel-right
   m_TagString: Player
@@ -270,8 +271,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462335229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.61, y: -3.65, z: 0}
-  m_LocalScale: {x: 0.18, y: 0.18, z: 1}
+  m_LocalPosition: {x: 6.56, y: -3.5, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 1}
   m_Children: []
   m_Father: {fileID: 952347083}
   m_RootOrder: 1
@@ -327,6 +328,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &462335232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462335229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a839091f9ef82a644b0daf6e779b8ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,8 +583,6 @@ MonoBehaviour:
   coin: {fileID: 1503208108850241639, guid: 9a3d5c663a46bcd4186b8b0ea3762336, type: 3}
   coin2: {fileID: 3214714856735623641, guid: b617f0c4ed60ef249993be4ef45bf35b, type: 3}
   coin3: {fileID: 6253529246192391888, guid: 8914b03317a832f4c9fd16902b2a49f8, type: 3}
-  maxX: 0
-  minX: 0
   maxY: 3
   minY: -3
   timeBetweenSpawn: 2
@@ -685,10 +696,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17941666, y: 1.5307292}
+  m_Offset: {x: 0.17941666, y: -0.30816936}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -699,7 +710,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.121166, y: 6.2050247}
+  m_Size: {x: 20.121166, y: 9.882822}
   m_EdgeRadius: 0
 --- !u!50 &952347085
 Rigidbody2D:
@@ -732,6 +743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 997356588}
   - component: {fileID: 997356589}
+  - component: {fileID: 997356590}
   m_Layer: 0
   m_Name: bus-wheel-left
   m_TagString: Player
@@ -747,8 +759,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997356587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.05, y: -3.66, z: 0}
-  m_LocalScale: {x: 0.18, y: 0.18, z: 1}
+  m_LocalPosition: {x: -6.13, y: -3.5, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 1}
   m_Children: []
   m_Father: {fileID: 952347083}
   m_RootOrder: 0
@@ -804,6 +816,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &997356590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997356587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a839091f9ef82a644b0daf6e779b8ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1036495164
 GameObject:
   m_ObjectHideFlags: 0
