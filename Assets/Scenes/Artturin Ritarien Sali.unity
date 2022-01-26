@@ -583,7 +583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78a272865ac8ad488e3d2fb02deeef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plungerSpeed: 5
+  plungerSpeed: 20
+  enemy: {fileID: 1333623782930812246, guid: cb4d8a3ce1b59a3408453afc4c1d8a98, type: 3}
 --- !u!1 &594879457
 GameObject:
   m_ObjectHideFlags: 0
