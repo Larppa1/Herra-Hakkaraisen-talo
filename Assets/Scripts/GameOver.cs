@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 namespace TIKO4A2021 {
     public class GameOver : MonoBehaviour {
         public GameObject gameOverPanel;
+        public GameObject coinBar;
         private bool isPaused = false;
 
         void Update() {
@@ -14,6 +17,7 @@ namespace TIKO4A2021 {
                 MeteorProperties.meteorCount = 0;
                 CoinCount.amount = 0;
                 gameOverPanel.SetActive(true);
+                coinBar.SetActive(false);
             }
 
             if(isPaused) {

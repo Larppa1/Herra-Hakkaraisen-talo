@@ -40,7 +40,6 @@ namespace TIKO4A2021 {
             }else if(collision.tag == "Coin3") {
                 CoinCount.amount += 15;
             }
-            Debug.Log(CoinCount.amount);
         }
     }
 }
