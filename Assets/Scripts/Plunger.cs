@@ -10,6 +10,7 @@ namespace TIKO4A2021
         public float plungerSpeed;
         public GameObject enemy;
         private Rigidbody2D plungerBody;
+        private int totalActiveTweens;
 
         void Start(){
             plungerBody = GetComponent<Rigidbody2D>();
@@ -19,13 +20,16 @@ namespace TIKO4A2021
             plungerDirection = new Vector2(directionX, 0).normalized;
             PlungerProperties.position = transform.position;
             
-            if(Input.GetKeyDown("down")) {
-                transform.DOMove(new Vector2(transform.position.x, -3), (float)0.8).SetLoops(2, LoopType.Yoyo);
+            totalActiveTweens = DOTween.TotalActiveTweens();
+
+            if(Input.GetKeyDown("down") && totalActiveTweens == 0) {
+                Debug.Log(totalActiveTweens);
+                transform.DOMove(new Vector2(transform.position.x, -3), (float)0.75).SetLoops(2, LoopType.Yoyo);
             }
 
             if(transform.position.y > 3 && PlungerProperties.isCaught) {
                 if(PlungerProperties.isDestroyed == false) {
-                    transform.DOMove(new Vector2(transform.position.x, 10), (float)0.8).SetLoops(2, LoopType.Yoyo);
+                    transform.DOMove(new Vector2(transform.position.x, 10), (float)0.75).SetLoops(2, LoopType.Yoyo);
                     PlungerProperties.isDestroyed = true;
                 }
             }

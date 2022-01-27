@@ -33,8 +33,8 @@ namespace TIKO4A2021 {
         void FixedUpdate() {
             goblinBody.velocity = new Vector2(goblinDirection.x * goblinSpeed, 0);
             if(isHit) {
-                goblinSpeed = DragonSpeed.speed;
-                Debug.Log(goblinSpeed);
+                //goblinSpeed = DragonSpeed.speed;
+                //Debug.Log(goblinSpeed);
             }else {
                 goblinSpeed = 3;
             }
@@ -58,7 +58,7 @@ namespace TIKO4A2021 {
         private void OnTriggerExit2D(Collider2D collision) {
             if(collision.tag == "Dragon" || collision.tag == "Goblin") {
                 if(DragonSpeed.speed > 0) {
-                    DragonSpeed.speed -= (float)0.05;
+                    //DragonSpeed.speed -= (float)0.05;
                 }
             }
         }

@@ -14,7 +14,7 @@ namespace TIKO4A2021 {
         }
         private void OnTriggerEnter2D(Collider2D collision) {
             if (collision.tag == "Goblin") {
-                dragonDirection = new Vector2(-1, 0).normalized;
+                //dragonDirection = new Vector2(-1, 0).normalized;
             }
         }
 
@@ -25,7 +25,7 @@ namespace TIKO4A2021 {
         }
 
         void FixedUpdate() {
-            dragonBody.velocity = new Vector2(dragonDirection.x * DragonSpeed.speed, 0);
+            //dragonBody.velocity = new Vector2(dragonDirection.x * DragonSpeed.speed, 0);
         }
     }
 }
