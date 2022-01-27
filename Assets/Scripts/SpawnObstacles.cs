@@ -13,17 +13,27 @@ namespace TIKO4A2021 {
         public float timeBetweenSpawn;
         private float spawnTime;
         private float randomY;
+        private bool isSpawnTimeUpdated;
 
         void Update() {
             if (Time.time > spawnTime) {
                 randomY = Random.Range(minY, maxY);
                 Instantiate(obstacle, transform.position + new Vector3(0, randomY, 0), transform.rotation);
-                spawnTime = Time.time + timeBetweenSpawn;
+                spawnTime = Time.time + (float)timeBetweenSpawn;
                 MeteorProperties.meteorPosY = obstacle.transform.position.y;
 
                 if(MeteorProperties.meteorCount % 5 == 0) {
                     SpawnCoin();
                 }
+            }
+
+            if(ScoreManager.score == 0) {
+
+            }else if(ScoreManager.score % 100 == 0 && isSpawnTimeUpdated == false && timeBetweenSpawn >= 1) {
+                timeBetweenSpawn -= (float)0.05;
+                isSpawnTimeUpdated = true;
+            }else if(ScoreManager.score % 100 != 0) {
+                isSpawnTimeUpdated = false;
             }
         }
 

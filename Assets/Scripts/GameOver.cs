@@ -8,7 +8,10 @@ namespace TIKO4A2021 {
     public class GameOver : MonoBehaviour {
         public GameObject gameOverPanel;
         public GameObject coinBar;
+        public Text lastScore;
+        public Text highScore;
         private bool isPaused = false;
+        private bool isScoreUpdated = false;
 
         void Update() {
             if(GameObject.FindGameObjectWithTag("Player") == null) {
@@ -25,10 +28,20 @@ namespace TIKO4A2021 {
             }else {
                 Time.timeScale = 1;
             }
+
+            if(gameOverPanel.activeSelf && isScoreUpdated == false) {
+                if(ScoreManager.score > PlayerPrefs.GetInt("highscore")) {
+                    PlayerPrefs.SetInt("highscore", ScoreManager.score);
+                }
+                lastScore.text = "Pisteet: " + (ScoreManager.score).ToString();
+                highScore.text = "Paras tulos: " + (PlayerPrefs.GetInt("highscore")).ToString();
+                isScoreUpdated = true;
+            }
         }
 
         public void Restart() {
             isPaused = false;
+            isScoreUpdated = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
