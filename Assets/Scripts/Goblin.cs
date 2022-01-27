@@ -13,7 +13,6 @@ namespace TIKO4A2021 {
         private Vector2 cagePos;
         private bool isHit = false;
         private bool isCaught = false;
-        private int hitCount = 0;
 
         void Start() {
             goblinBody = GetComponent<Rigidbody2D>();
@@ -34,19 +33,17 @@ namespace TIKO4A2021 {
         void FixedUpdate() {
             goblinBody.velocity = new Vector2(goblinDirection.x * goblinSpeed, 0);
             if(isHit) {
-                goblinSpeed = (float) DragonSpeed.speed;
+                goblinSpeed = DragonSpeed.speed;
+                Debug.Log(goblinSpeed);
             }else {
                 goblinSpeed = 3;
             }
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.tag == "Dragon") {
-                hitCount++;
-                if(hitCount == 1) {
-                    DragonSpeed.speed += (float) 0.05;
-                    isHit = true;
-                }
+            if (collision.tag == "Dragon" || collision.tag == "Goblin") {
+                DragonSpeed.speed += (float)0.05;
+                isHit = true;
             }else if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
@@ -55,6 +52,14 @@ namespace TIKO4A2021 {
                 isCaught = false;
                 PlungerProperties.isCaught = false;
                 PlungerProperties.isDestroyed = false;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision) {
+            if(collision.tag == "Dragon" || collision.tag == "Goblin") {
+                if(DragonSpeed.speed > 0) {
+                    DragonSpeed.speed -= (float)0.05;
+                }
             }
         }
     }

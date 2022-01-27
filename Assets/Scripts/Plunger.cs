@@ -20,12 +20,12 @@ namespace TIKO4A2021
             PlungerProperties.position = transform.position;
             
             if(Input.GetKeyDown("down")) {
-                transform.DOMove(new Vector2(transform.position.x, -3), 1).SetLoops(2, LoopType.Yoyo);
+                transform.DOMove(new Vector2(transform.position.x, -3), (float)0.8).SetLoops(2, LoopType.Yoyo);
             }
 
             if(transform.position.y > 3 && PlungerProperties.isCaught) {
                 if(PlungerProperties.isDestroyed == false) {
-                    transform.DOMove(new Vector2(transform.position.x, 10), 1).SetLoops(2, LoopType.Yoyo);
+                    transform.DOMove(new Vector2(transform.position.x, 10), (float)0.8).SetLoops(2, LoopType.Yoyo);
                     PlungerProperties.isDestroyed = true;
                 }
             }
