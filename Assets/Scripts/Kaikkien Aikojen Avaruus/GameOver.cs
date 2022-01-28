@@ -10,7 +10,7 @@ namespace TIKO4A2021 {
         public GameObject coinBar;
         public Text lastScore;
         public Text highScore;
-        public static bool isPaused = false;
+        public bool isPaused = false;
         private bool isScoreUpdated = false;
 
         void Update() {
