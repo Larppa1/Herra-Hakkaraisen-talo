@@ -11,6 +11,8 @@ namespace TIKO4A2021
         public GameObject enemy;
         private Rigidbody2D plungerBody;
         private int totalActiveTweens;
+        [SerializeField]
+        private float plunSpeed = 0;
 
         void Start(){
             plungerBody = GetComponent<Rigidbody2D>();
@@ -24,12 +26,12 @@ namespace TIKO4A2021
 
             if(Input.GetKeyDown("down") && totalActiveTweens == 0) {
                 Debug.Log(totalActiveTweens);
-                transform.DOMove(new Vector2(transform.position.x, -3), (float)0.75).SetLoops(2, LoopType.Yoyo);
+                transform.DOMove(new Vector2(transform.position.x, -3), plunSpeed).SetLoops(2, LoopType.Yoyo);
             }
 
             if(transform.position.y > 3 && PlungerProperties.isCaught) {
                 if(PlungerProperties.isDestroyed == false) {
-                    transform.DOMove(new Vector2(transform.position.x, 10), (float)0.75).SetLoops(2, LoopType.Yoyo);
+                    transform.DOMove(new Vector2(transform.position.x, 10), plunSpeed).SetLoops(2, LoopType.Yoyo);
                     PlungerProperties.isDestroyed = true;
                 }
             }
