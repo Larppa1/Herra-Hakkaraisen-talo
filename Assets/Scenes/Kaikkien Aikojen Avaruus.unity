@@ -1305,7 +1305,6 @@ GameObject:
   - component: {fileID: 1468270945}
   - component: {fileID: 1468270948}
   - component: {fileID: 1468270947}
-  - component: {fileID: 1468270946}
   m_Layer: 5
   m_Name: Coin amount
   m_TagString: Untagged
@@ -1332,19 +1331,6 @@ RectTransform:
   m_AnchoredPosition: {x: -18.88, y: 15.900024}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1468270946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468270944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3a950db2ba4bd64580ecd6a5ed69c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinText: {fileID: 1468270947}
 --- !u!114 &1468270947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,16 +1592,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146379570}
-        m_TargetAssemblyTypeName: TIKO4A2021.GameOver, Assembly-CSharp
-        m_MethodName: Restart
-        m_Mode: 1
+      - m_Target: {fileID: 37170248}
+        m_TargetAssemblyTypeName: TIKO4A2021.SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Kaikkien Aikojen Avaruus
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1672306275
@@ -1802,9 +1788,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1754385721}
   - component: {fileID: 1754385720}
-  - component: {fileID: 1754385723}
-  - component: {fileID: 1754385722}
   - component: {fileID: 1754385724}
+  - component: {fileID: 1754385722}
   m_Layer: 0
   m_Name: Game Master
   m_TagString: Untagged
@@ -1847,21 +1832,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1754385719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573a5ac5d60504b43902434a7e7a7cd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fe7949fe630d444fba24a662c5664c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1754385723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754385719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573a5ac5d60504b43902434a7e7a7cd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  coinText: {fileID: 1468270947}
 --- !u!114 &1754385724
 MonoBehaviour:
   m_ObjectHideFlags: 0

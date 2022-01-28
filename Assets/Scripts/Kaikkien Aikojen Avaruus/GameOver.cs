@@ -10,7 +10,7 @@ namespace TIKO4A2021 {
         public GameObject coinBar;
         public Text lastScore;
         public Text highScore;
-        private bool isPaused = false;
+        public static bool isPaused = false;
         private bool isScoreUpdated = false;
 
         void Update() {
@@ -18,7 +18,6 @@ namespace TIKO4A2021 {
                 isPaused = true;
                 MeteorProperties.coinCount = 0;
                 MeteorProperties.meteorCount = 0;
-                CoinCount.amount = 0;
                 gameOverPanel.SetActive(true);
                 coinBar.SetActive(false);
             }
@@ -35,6 +34,7 @@ namespace TIKO4A2021 {
                 }
                 lastScore.text = "Pisteet: " + (ScoreManager.score).ToString();
                 highScore.text = "Paras tulos: " + (PlayerPrefs.GetInt("highscore")).ToString();
+                PlayerPrefs.SetInt("coinCount", PlayerPrefs.GetInt("coinCount") + CoinManager.amount);
                 isScoreUpdated = true;
             }
         }
@@ -42,6 +42,7 @@ namespace TIKO4A2021 {
         public void Restart() {
             isPaused = false;
             isScoreUpdated = false;
+            CoinManager.amount = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

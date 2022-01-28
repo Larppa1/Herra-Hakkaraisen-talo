@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace TIKO4A2021 {
-    public class CoinAmount : MonoBehaviour {
-        public Text coinText;
+    public class CoinCount : MonoBehaviour {
+        public Text coinAmount;
+
         void Update() {
-            coinText.text = (CoinCount.amount).ToString();
+            coinAmount.text = (PlayerPrefs.GetInt("coinCount")).ToString();
         }
     }
 }
