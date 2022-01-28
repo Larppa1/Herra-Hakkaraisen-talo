@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace TIKO4A2021 {
     public class SpawnObstacles : MonoBehaviour {
-        public GameObject obstacle;
+        public GameObject meteor1;
+        public GameObject meteor2;
+        public GameObject meteor3;
         public GameObject coin;
         public GameObject coin2;
         public GameObject coin3;
@@ -18,9 +20,16 @@ namespace TIKO4A2021 {
         void Update() {
             if (Time.time > spawnTime) {
                 randomY = Random.Range(minY, maxY);
-                Instantiate(obstacle, transform.position + new Vector3(0, randomY, 0), transform.rotation);
+                int randomMeteor = Random.Range(1, 3);
+                switch(randomMeteor) {
+                    case 1: Instantiate(meteor1, transform.position + new Vector3(0, randomY, 0), transform.rotation);
+                            MeteorProperties.meteorPosY = meteor1.transform.position.y; break;
+                    case 2: Instantiate(meteor2, transform.position + new Vector3(0, randomY, 0), transform.rotation);
+                            MeteorProperties.meteorPosY = meteor2.transform.position.y; break;
+                    case 3: Instantiate(meteor3, transform.position + new Vector3(0, randomY, 0), transform.rotation);
+                            MeteorProperties.meteorPosY = meteor3.transform.position.y; break;
+                }
                 spawnTime = Time.time + (float)timeBetweenSpawn;
-                MeteorProperties.meteorPosY = obstacle.transform.position.y;
 
                 if(MeteorProperties.meteorCount % 5 == 0) {
                     SpawnCoin();

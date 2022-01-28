@@ -659,7 +659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46718812ec5a65745b4a91464523a41f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 5626512776823154206, guid: a99e7668be0c39a488ceea23a3b1d380, type: 3}
+  meteor1: {fileID: 7536546251722775747, guid: fd89b71bbd32a8948ae12c5c3d44af1c, type: 3}
+  meteor2: {fileID: 2773518348916152818, guid: 6d7d88b276f5b4b4ba0679823b0fd6bf, type: 3}
+  meteor3: {fileID: 8545574067574023885, guid: 3c24297c76eb03840bd67b8431a0c051, type: 3}
   coin: {fileID: 1503208108850241639, guid: 9a3d5c663a46bcd4186b8b0ea3762336, type: 3}
   coin2: {fileID: 3214714856735623641, guid: b617f0c4ed60ef249993be4ef45bf35b, type: 3}
   coin3: {fileID: 6253529246192391888, guid: 8914b03317a832f4c9fd16902b2a49f8, type: 3}
