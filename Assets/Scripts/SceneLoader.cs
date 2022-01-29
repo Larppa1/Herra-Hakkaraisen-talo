@@ -8,6 +8,7 @@ namespace TIKO4A2021 {
         public void LoadScene(string sceneName) {
             SceneManager.LoadScene(sceneName);
             Time.timeScale = 1;
+            CoinManager.amount = 0;
         }
     }
 }
