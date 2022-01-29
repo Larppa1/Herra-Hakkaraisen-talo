@@ -6,23 +6,26 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class Countdown : MonoBehaviour {
         public Text countdowntext;
-        private float count = 2;
-        public GameObject varillinen;
-        public GameObject variton;
-        public GameObject variton2;
-        public GameObject variton3;
-        public GameObject variton4;
+        private float count = 10;
+        public GameObject topLeft;
+        public GameObject topRight;
+        public GameObject bottomLeft;
+        public GameObject bottomRight;
+        private SpriteRenderer topLeftRenderer;
+        private SpriteRenderer topRightRenderer;
+        private SpriteRenderer bottomLeftRenderer;
+        private SpriteRenderer bottomRightRenderer;
 
         void Update() {
             if(count>0){
                 count -= Time.deltaTime;
                 countdowntext.text = ((int)count).ToString();
             }else if ((int)count == 0) {
-                varillinen.SetActive(false);
-                variton.SetActive(true);
-                variton2.SetActive(true);
-                variton3.SetActive(true);
-                variton4.SetActive(true);
+                topLeft.GetComponent<SpriteRenderer>().color = Color.white;
+                topRight.GetComponent<SpriteRenderer>().color = Color.white;
+                bottomLeft.GetComponent<SpriteRenderer>().color = Color.white;
+                bottomRight.GetComponent<SpriteRenderer>().color = Color.white;
+                count--;
             }
         }
     }

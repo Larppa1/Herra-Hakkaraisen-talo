@@ -48,10 +48,10 @@ namespace TIKO4A2021 {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
             }else if(collision.tag == "Border") {
-                Destroy(this.gameObject);
                 isCaught = false;
                 PlungerProperties.isCaught = false;
                 PlungerProperties.isDestroyed = false;
+                Destroy(this.gameObject);
             }
         }
 

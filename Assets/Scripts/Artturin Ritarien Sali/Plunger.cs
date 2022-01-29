@@ -25,15 +25,12 @@ namespace TIKO4A2021
             totalActiveTweens = DOTween.TotalActiveTweens();
 
             if(Input.GetKeyDown("down") && totalActiveTweens == 0) {
-                Debug.Log(totalActiveTweens);
                 transform.DOMove(new Vector2(transform.position.x, -3), plunSpeed).SetLoops(2, LoopType.Yoyo);
             }
 
-            if(transform.position.y > 3 && PlungerProperties.isCaught) {
-                if(PlungerProperties.isDestroyed == false) {
-                    transform.DOMove(new Vector2(transform.position.x, 10), plunSpeed).SetLoops(2, LoopType.Yoyo);
-                    PlungerProperties.isDestroyed = true;
-                }
+            if(transform.position.y > 3.3 && PlungerProperties.isCaught && totalActiveTweens == 0 && PlungerProperties.isDestroyed == false) {
+                PlungerProperties.isDestroyed = true;
+                transform.DOMove(new Vector2(transform.position.x, 10), plunSpeed).SetLoops(2, LoopType.Yoyo);
             }
         }
         void FixedUpdate(){
