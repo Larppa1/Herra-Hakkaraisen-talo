@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TIKO4A2021 {
     public class Dragon : MonoBehaviour {
-        private float dragonSpeed;
+        private float dragonSpeed = 0;
         private Rigidbody2D dragonBody;
         private Vector2 dragonDirection;
         public GameObject gameOverPanel;
@@ -12,9 +12,15 @@ namespace TIKO4A2021 {
         void Start() {
             dragonBody = GetComponent<Rigidbody2D>();
         }
-        private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.tag == "Goblin") {
-                //dragonDirection = new Vector2(-1, 0).normalized;
+        private void OnTriggerStay2D(Collider2D collision) {
+            if(collision.tag == "Goblin"){
+                dragonSpeed = 1;
+                dragonDirection = new Vector2(0, 1);
+            }
+        }
+                private void OnTriggerExit2D(Collider2D collision) {
+            if(collision.tag == "Goblin"){
+                dragonSpeed = 0;
             }
         }
 
@@ -22,10 +28,15 @@ namespace TIKO4A2021 {
             if(gameObject.transform.position.x < -4) {
                 gameOverPanel.SetActive(true);
             }
+            DragonSpeed.yPos = transform.position.y;
+            if(transform.position.y > 1.956){
+                dragonDirection = new Vector2(1,0);
+            }
         }
 
         void FixedUpdate() {
-            //dragonBody.velocity = new Vector2(dragonDirection.x * DragonSpeed.speed, 0);
+            dragonBody.velocity = new Vector2(dragonDirection.x * dragonSpeed , dragonDirection.y * dragonSpeed);
         }
+
     }
 }
