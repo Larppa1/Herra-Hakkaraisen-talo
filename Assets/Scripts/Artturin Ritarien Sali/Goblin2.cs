@@ -7,11 +7,12 @@ namespace TIKO4A2021 {
     public class Goblin2 : MonoBehaviour {
         private float goblinSpeed = 3;
         private Rigidbody2D goblinBody;
-        private Vector2 goblinDirection;
         private float xPos;
         private float yPos;
         private Vector2 cagePos;
         private bool isCaught = false;
+        private int goblinMeeting=0;
+        private Vector2 goblinDirection;
 
         void Start() {
             goblinBody = GetComponent<Rigidbody2D>();
@@ -21,15 +22,10 @@ namespace TIKO4A2021 {
             if(isCaught) {
                 cagePos = PlungerProperties.position;
                 transform.position = new Vector2(cagePos.x - xPos, cagePos.y - yPos);
-            }else {
-                if(DragonSpeed.yPos > 1.956){
-                    goblinDirection = new Vector2(1, 0).normalized;
-                }
-                else{
-                    goblinDirection = new Vector2(-1, 0).normalized;
-                }
+            } if(goblinMeeting == 0) {
+                goblinDirection = new Vector2(-1, 0).normalized;
             }
-            
+            else if(goblinMeeting == 1){}
             xPos = PlungerProperties.position.x - transform.position.x;
             yPos = PlungerProperties.position.y - transform.position.y;
         }
@@ -39,14 +35,27 @@ namespace TIKO4A2021 {
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.tag == "Dragon" ) {
-            }else if(collision.tag == "Plunger") {
+            if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
-            }else if(collision.tag == "Border") {
+            } if(collision.tag == "Border") {
                 isCaught = false;
                 PlungerProperties.isCaught = false;
                 Destroy(this.gameObject);
+            } if(collision.tag == "Goblin"){
+                GoblinProperties.godlyIntervention = true;
+            } 
+        }
+        private void OnTriggerStay2D(Collider2D collision){
+            if(collision.tag == "Goblin2" && GoblinProperties.godlyIntervention == true){
+                    goblinMeeting = 1;
+                    goblinDirection = new Vector2(1, 0).normalized;
+                    goblinSpeed = 2;
+                }
+            }
+        private void OnTriggerExit2D(Collider2D collision){
+            if(collision.tag == "Goblin2" ){
+                goblinSpeed = 3;
             }
         }
 

@@ -8,7 +8,6 @@ namespace TIKO4A2021 {
         public static float yPos;
 
         void Update() {
-            Debug.Log(yPos);
         }
     }
 }

@@ -13,13 +13,13 @@ namespace TIKO4A2021 {
             dragonBody = GetComponent<Rigidbody2D>();
         }
         private void OnTriggerStay2D(Collider2D collision) {
-            if(collision.tag == "Goblin"){
+            if(collision.tag == "Goblin" || collision.tag == "Goblin2"){
                 dragonSpeed = 1;
                 dragonDirection = new Vector2(0, 1);
             }
         }
                 private void OnTriggerExit2D(Collider2D collision) {
-            if(collision.tag == "Goblin"){
+            if(collision.tag == "Goblin" || collision.tag == "Goblin2"){
                 dragonSpeed = 0;
             }
         }
@@ -29,7 +29,7 @@ namespace TIKO4A2021 {
                 gameOverPanel.SetActive(true);
             }
             DragonSpeed.yPos = transform.position.y;
-            if(transform.position.y > 1.956){
+            if(transform.position.y > 0.5){
                 dragonDirection = new Vector2(1,0);
             }
         }

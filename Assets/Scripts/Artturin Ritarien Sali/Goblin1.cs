@@ -44,6 +44,15 @@ namespace TIKO4A2021 {
                 Destroy(this.gameObject);
             }
         }
-
+        private void OnTriggerStay2D(Collider2D collision){
+            if(collision.tag == "Goblin" || collision.tag == "Goblin2"){
+                goblinSpeed = 2;
+            }
+        }
+        private void OnTriggerExit2D(Collider2D collision){
+            if(collision.tag == "Goblin" || collision.tag == "Goblin2"){
+                goblinSpeed = 3;
+            }
+        }
     }
 }
