@@ -12,6 +12,7 @@ TagManager:
   - Coin3
   - Plunger
   - Goblin2
+  - Tree
   layers:
   - Default
   - TransparentFX

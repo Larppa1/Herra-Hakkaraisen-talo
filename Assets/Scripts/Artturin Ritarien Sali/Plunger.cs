@@ -8,7 +8,6 @@ namespace TIKO4A2021
     public class Plunger : MonoBehaviour{
         private Vector2 plungerDirection;
         public float plungerSpeed;
-        public GameObject enemy;
         private Rigidbody2D plungerBody;
         private int totalActiveTweens;
         [SerializeField]
@@ -23,12 +22,11 @@ namespace TIKO4A2021
             plungerDirection = new Vector2(directionX, 0).normalized;
             PlungerProperties.position = transform.position;
 
-            totalActiveTweens = DOTween.TotalActiveTweens();
-
-            if(Input.GetKeyDown("down") && totalActiveTweens == 0) {
+            //totalActiveTweens = plungerAnim.TotalActiveTweens();
+            if(Input.GetKeyDown("down") && !DOTween.IsTweening(transform)) {
                 transform.DOMove(new Vector2(transform.position.x, -3), plunSpeed).SetLoops(2, LoopType.Yoyo);
                 isMoving = true;
-            }else if(transform.position.y > 3.34 && PlungerProperties.isCaught && totalActiveTweens == 0 && isMoving == true) {
+            }else if(transform.position.y > 3.34 && PlungerProperties.isCaught && !DOTween.IsTweening(transform) && isMoving == true) {
                 isMoving = false;
                 transform.DOMove(new Vector2(transform.position.x, 10), plunSpeed).SetLoops(2, LoopType.Yoyo);
             }
