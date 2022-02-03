@@ -33,8 +33,7 @@ namespace TIKO4A2021 {
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.tag == "Dragon") {
-            }else if(collision.tag == "Plunger") {
+            if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
             }else if(collision.tag == "Border") {

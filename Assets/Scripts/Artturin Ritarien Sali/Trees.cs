@@ -6,16 +6,13 @@ using DG.Tweening;
 namespace TIKO4A2021
 {
     public class Trees : MonoBehaviour{
-        private float count = 15;
+        private float count = 20;
         private bool isShaking = false;
 
         void Update(){
-            if(isShaking == true){
+            if(isShaking == true && count > 0){
                 count -= Time.deltaTime;
-                Debug.Log(count);
-            }
-            if(count < 0){
-                Destroy(this.gameObject);
+                //Debug.Log(count);
             }
         }
 
