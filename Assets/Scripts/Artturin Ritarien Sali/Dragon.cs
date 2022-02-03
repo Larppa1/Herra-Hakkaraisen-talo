@@ -15,7 +15,7 @@ namespace TIKO4A2021 {
 
         void Update() {
             if(DragonSpeed.shakeIsActive == true){
-                dragonBody.constraints = RigidbodyConstraints2D.None;
+                //dragonBody.constraints = RigidbodyConstraints2D.None;
                 dragonDirection = new Vector2(1 ,0).normalized;
             }else if(DragonSpeed.shakeIsActive == false && transform.position.x > 8) {
                 dragonBody.constraints = RigidbodyConstraints2D.FreezePosition;

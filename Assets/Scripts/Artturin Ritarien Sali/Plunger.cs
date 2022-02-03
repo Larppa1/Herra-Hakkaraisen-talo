@@ -11,7 +11,7 @@ namespace TIKO4A2021
         private Rigidbody2D plungerBody;
         private int totalActiveTweens;
         [SerializeField]
-        private float plunSpeed = 0;
+        private float animSpeed;
         private bool isMoving = false;
 
         void Start(){
@@ -22,13 +22,12 @@ namespace TIKO4A2021
             plungerDirection = new Vector2(directionX, 0).normalized;
             PlungerProperties.position = transform.position;
 
-            //totalActiveTweens = plungerAnim.TotalActiveTweens();
             if(Input.GetKeyDown("down") && !DOTween.IsTweening(transform)) {
-                transform.DOMove(new Vector2(transform.position.x, -3), plunSpeed).SetLoops(2, LoopType.Yoyo);
+                transform.DOMove(new Vector2(transform.position.x, -3), animSpeed).SetLoops(2, LoopType.Yoyo);
                 isMoving = true;
             }else if(transform.position.y > 3.34 && PlungerProperties.isCaught && !DOTween.IsTweening(transform) && isMoving == true) {
                 isMoving = false;
-                transform.DOMove(new Vector2(transform.position.x, 10), plunSpeed).SetLoops(2, LoopType.Yoyo);
+                transform.DOMove(new Vector2(transform.position.x, 10), animSpeed).SetLoops(2, LoopType.Yoyo);
             }
         }
         void FixedUpdate(){

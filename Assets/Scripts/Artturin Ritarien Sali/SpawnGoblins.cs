@@ -14,20 +14,28 @@ namespace TIKO4A2021 {
         public string oddOrEven;
         private bool isSpawned = false;
         private int randomSurprise;
+        private float time = 0;
 
         void Update() {
             timer += Time.deltaTime;
             timeSimplified = (int)timer;
-            if (oddOrEven == "odd" && timeSimplified % 2 == 0 && timeSimplified % 4 != 0 && isSpawned == false) {
+            Debug.Log(time);
+            if((GoblinProperties.amount == WaveSystem.firstWaveEnemyCount || GoblinProperties.amount == WaveSystem.secondWaveEnemyCount) && time < 10) {
+                time += Time.deltaTime;
+            }else if (oddOrEven == "odd" && timeSimplified % 2 == 0 && timeSimplified % 4 != 0 && isSpawned == false) {
                 float randomX = Random.Range(minX, maxX);
                 float randomY = Random.Range(minY, maxY);
                 Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
                 isSpawned = true;
+                GoblinProperties.amount++;
             }else if(oddOrEven == "even" && timeSimplified % 4 == 0 && isSpawned == false) {
                 float randomX = Random.Range(minX, maxX);
                 float randomY = Random.Range(minY, maxY);
                 Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
                 isSpawned = true;
+                GoblinProperties.amount++;
+            }else if(time >= 10) {
+                time = 0;
             }
 
             if(oddOrEven == "odd" && timeSimplified % 4 == 0 && isSpawned == true) {
