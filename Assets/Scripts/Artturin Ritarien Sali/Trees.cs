@@ -12,7 +12,6 @@ namespace TIKO4A2021
         void Update(){
             if(isShaking == true && count > 0){
                 count -= Time.deltaTime;
-                //Debug.Log(count);
             }
         }
 

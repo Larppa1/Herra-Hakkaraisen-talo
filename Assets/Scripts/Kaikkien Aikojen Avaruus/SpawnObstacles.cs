@@ -4,17 +4,8 @@ using UnityEngine;
 
 namespace TIKO4A2021 {
     public class SpawnObstacles : MonoBehaviour {
-        public GameObject meteor1;
-        public GameObject meteor2;
-        public GameObject meteor3;
-        public GameObject coin;
-        public GameObject coin2;
-        public GameObject coin3;
-        public float maxY;
-        public float minY;
-        public float timeBetweenSpawn;
-        private float spawnTime;
-        private float randomY;
+        public GameObject meteor1, meteor2, meteor3, coin, coin2, coin3;
+        public float minY, maxY, timeBetweenSpawn, spawnTime, randomY;
         private bool isSpawnTimeUpdated;
 
         void Update() {

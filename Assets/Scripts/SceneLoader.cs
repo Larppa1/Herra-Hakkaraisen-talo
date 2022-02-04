@@ -9,6 +9,9 @@ namespace TIKO4A2021 {
             SceneManager.LoadScene(sceneName);
             Time.timeScale = 1;
             CoinManager.amount = 0;
+            WaveSystem.waveNum = 0;
+            GoblinProperties.amount = 0;
+            DragonSpeed.shakeIsActive = false;
         }
     }
 }

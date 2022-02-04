@@ -5,12 +5,8 @@ using UnityEngine.UI;
 
 namespace TIKO4A2021 {
     public class WaveSystem : MonoBehaviour {
-        public Text remainingEnemies;
-        public Text wave;
-        private int waveNum;
-        public static int firstWaveEnemyCount;
-        public static int secondWaveEnemyCount;
-        public static int thirdWaveEnemyCount;
+        public Text wave, remainingEnemies;
+        public static int firstWaveEnemyCount, secondWaveEnemyCount, thirdWaveEnemyCount, waveNum;
         public GameObject gameManager;
         void Update() {
             switch(waveNum) {

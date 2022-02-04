@@ -5,21 +5,16 @@ using UnityEngine;
 namespace TIKO4A2021 {
     public class SpawnGoblins : MonoBehaviour {
         public GameObject obstacle;
-        public float maxX;
-        public float minX;
-        public float maxY;
-        public float minY;
-        private float timer = 0;
-        private int timeSimplified;
+        public float minX, maxX, minY, maxY, timer = 0;
         public string oddOrEven;
+        private int timeSimplified, randomSurprise;
         private bool isSpawned = false;
-        private int randomSurprise;
         private float time = 0;
 
         void Update() {
             timer += Time.deltaTime;
             timeSimplified = (int)timer;
-            Debug.Log(time);
+            
             if((GoblinProperties.amount == WaveSystem.firstWaveEnemyCount || GoblinProperties.amount == WaveSystem.secondWaveEnemyCount) && time < 10) {
                 time += Time.deltaTime;
             }else if (oddOrEven == "odd" && timeSimplified % 2 == 0 && timeSimplified % 4 != 0 && isSpawned == false) {

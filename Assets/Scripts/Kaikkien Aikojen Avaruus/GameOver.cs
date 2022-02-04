@@ -6,12 +6,9 @@ using UnityEngine.UI;
 
 namespace TIKO4A2021 {
     public class GameOver : MonoBehaviour {
-        public GameObject gameOverPanel;
-        public GameObject coinBar;
-        public Text lastScore;
-        public Text highScore;
-        public bool isPaused = false;
-        private bool isScoreUpdated = false;
+        public GameObject gameOverPanel, coinBar;
+        public Text lastScore, highScore;
+        public bool isPaused = false, isScoreUpdated = false;
 
         void Update() {
             if(GameObject.FindGameObjectWithTag("Player") == null) {

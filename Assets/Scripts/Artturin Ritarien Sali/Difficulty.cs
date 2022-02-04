@@ -6,9 +6,8 @@ using UnityEngine.UI;
 namespace TIKO4A2021
 {
     public class Difficulty : MonoBehaviour {
-        public GameObject gameManager;
-        public GameObject difficultyPanel;
-        public GameObject canvas;
+        public GameObject gameManager, difficultyPanel, canvas;
+        
         public void EnemyAmount(int enemyAmountTotal) {
             switch(enemyAmountTotal) {
                 case 60:

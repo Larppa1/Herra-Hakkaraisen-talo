@@ -16,7 +16,7 @@ namespace TIKO4A2021 {
                     score = (int)scoreFloat;
                     scoreText.text = (score).ToString();
                 }
-            }else{
+            }else {
                 scoreText.enabled = false;
             }
             if(score > PlayerPrefs.GetInt("highscore")) {

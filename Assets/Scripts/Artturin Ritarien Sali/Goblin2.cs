@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 namespace TIKO4A2021 {
     public class Goblin2 : MonoBehaviour {
-        private float goblinSpeed = 3;
         private Rigidbody2D goblinBody;
-        private float xPos;
-        private float yPos;
-        private Vector2 cagePos;
+        private float goblinSpeed = 3, xPos, yPos;
+        private Vector2 goblinDirection, plungerPos;
         private bool isCaught = false;
-        private Vector2 goblinDirection;
 
         void Start() {
             goblinBody = GetComponent<Rigidbody2D>();
@@ -19,8 +16,8 @@ namespace TIKO4A2021 {
 
         void Update() {
             if(isCaught) {
-                cagePos = PlungerProperties.position;
-                transform.position = new Vector2(cagePos.x - xPos, cagePos.y - yPos);
+                plungerPos = PlungerProperties.position;
+                transform.position = new Vector2(plungerPos.x - xPos, plungerPos.y - yPos);
             }else {
                 goblinDirection = new Vector2(-1, 0).normalized;
             }

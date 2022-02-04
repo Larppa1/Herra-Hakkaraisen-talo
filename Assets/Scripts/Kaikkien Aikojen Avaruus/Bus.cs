@@ -44,12 +44,10 @@ namespace TIKO4A2021 {
         //When tag is Coin2, CoinCount.amount will increase by 10.
         //When tag is Coin3, CoinCount.amount will increase by 15.
         private void OnTriggerEnter2D(Collider2D collision) {
-            if(collision.tag == "Coin") {
-                CoinManager.amount += 5;
-            }else if(collision.tag == "Coin2") {
-                CoinManager.amount += 10;
-            }else if(collision.tag == "Coin3") {
-                CoinManager.amount += 15;
+            switch(collision.tag) {
+                case "Coin": CoinManager.amount += 5; break;
+                case "Coin2": CoinManager.amount += 10; break;
+                case "Coin3": CoinManager.amount += 15; break;
             }
         }
     }

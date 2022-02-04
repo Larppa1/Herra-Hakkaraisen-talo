@@ -6,15 +6,9 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class Countdown : MonoBehaviour {
         public Text countdowntext;
+        public GameObject topLeft, topRight, bottomLeft, bottomRight;
+        private SpriteRenderer topLeftRenderer, topRightRenderer, bottomLeftRenderer, bottomRightRenderer;
         private float count = 10;
-        public GameObject topLeft;
-        public GameObject topRight;
-        public GameObject bottomLeft;
-        public GameObject bottomRight;
-        private SpriteRenderer topLeftRenderer;
-        private SpriteRenderer topRightRenderer;
-        private SpriteRenderer bottomLeftRenderer;
-        private SpriteRenderer bottomRightRenderer;
 
         void Update() {
             if(count>0){
