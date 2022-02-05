@@ -5,7 +5,9 @@ using UnityEngine;
 namespace TIKO4A2021 {
     public class ColorSetter : MonoBehaviour {
         void OnMouseDown() {
-            GetComponent<SpriteRenderer>().color = ColorPicker.color;
+            if(ColorChecker.counted == true){
+                GetComponent<SpriteRenderer>().color = ColorPicker.color;
+            }
         }
     }
 }

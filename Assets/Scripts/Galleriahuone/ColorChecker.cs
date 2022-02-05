@@ -9,6 +9,7 @@ namespace TIKO4A2021 {
         public GameObject topLeft, topRight, bottomLeft, bottomRight;
         private Color topLeftColored, topRightColored, bottomLeftColored, bottomRightColored;
         private int score = 0;
+        public static bool counted = false;
 
         void Start() {
             readyBtn.onClick.AddListener(CheckColors);

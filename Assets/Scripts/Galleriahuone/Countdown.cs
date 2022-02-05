@@ -8,18 +8,17 @@ namespace TIKO4A2021 {
         public Text countdowntext;
         public GameObject topLeft, topRight, bottomLeft, bottomRight;
         private SpriteRenderer topLeftRenderer, topRightRenderer, bottomLeftRenderer, bottomRightRenderer;
-        private float count = 10;
-
         void Update() {
-            if(count>0){
-                count -= Time.deltaTime;
-                countdowntext.text = ((int)count).ToString();
-            }else if ((int)count == 0) {
+            if(GalleryDifficulty.countSize>0){
+                GalleryDifficulty.countSize -= Time.deltaTime;
+                countdowntext.text = ((int)GalleryDifficulty.countSize).ToString();
+            }else if ((int)GalleryDifficulty.countSize == 0) {
                 topLeft.GetComponent<SpriteRenderer>().color = Color.white;
                 topRight.GetComponent<SpriteRenderer>().color = Color.white;
                 bottomLeft.GetComponent<SpriteRenderer>().color = Color.white;
                 bottomRight.GetComponent<SpriteRenderer>().color = Color.white;
-                count--;
+                ColorChecker.counted = true;
+                GalleryDifficulty.countSize--;
             }
         }
     }
