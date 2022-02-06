@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class Countdown : MonoBehaviour {
         public Text countdowntext;
-        public GameObject topLeft, topRight, bottomLeft, bottomRight;
+        public GameObject topLeft, topRight, bottomLeft, bottomRight, readyButton;
         private SpriteRenderer topLeftRenderer, topRightRenderer, bottomLeftRenderer, bottomRightRenderer;
         void Update() {
             if(GalleryDifficulty.countSize>0){
@@ -19,6 +19,7 @@ namespace TIKO4A2021 {
                 bottomRight.GetComponent<SpriteRenderer>().color = Color.white;
                 ColorChecker.counted = true;
                 GalleryDifficulty.countSize--;
+                readyButton.SetActive(true);
             }
         }
     }
