@@ -12,6 +12,7 @@ namespace TIKO4A2021 {
             WaveSystem.waveNum = 0;
             GoblinProperties.amount = 0;
             DragonSpeed.shakeIsActive = false;
+            ColorChecker.score = 0;
         }
     }
 }
