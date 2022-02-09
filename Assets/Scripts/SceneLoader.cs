@@ -13,6 +13,7 @@ namespace TIKO4A2021 {
             GoblinProperties.amount = 0;
             DragonSpeed.shakeIsActive = false;
             ColorChecker.score = 0;
+            ColorChecker.counted = false;
         }
     }
 }
