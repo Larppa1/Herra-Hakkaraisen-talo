@@ -9,6 +9,15 @@ namespace TIKO4A2021 {
         private Vector2 mousePos;
         private bool isOnTopOfBowl = false, isReleased = false;
         [SerializeField] private string ingredientName;
+
+        void Update() {
+            if(isOnTopOfBowl && isReleased) {
+                this.gameObject.SetActive(false);
+                transform.position = new Vector2(originalX, originalY);
+                IngredientList.ingredients += Environment.NewLine + ingredientName;
+            }
+        }
+        
         void OnMouseDown() {
             isReleased = false;
             xPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
@@ -33,14 +42,6 @@ namespace TIKO4A2021 {
             if(collision.tag == "Bowl") {
                 isOnTopOfBowl = true;
             }
-        }
-
-        private void OnTriggerStay2D(Collider2D collision) {
-                if(collision.tag == "Bowl" && isOnTopOfBowl && isReleased) {
-                    this.gameObject.SetActive(false);
-                    transform.position = new Vector2(originalX, originalY);
-                    IngredientList.ingredients += Environment.NewLine + ingredientName;
-                }
         }
 
         private void OnTriggerExit2D(Collider2D collision) {

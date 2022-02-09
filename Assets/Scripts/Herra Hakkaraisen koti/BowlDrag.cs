@@ -9,6 +9,13 @@ namespace TIKO4A2021
         private Vector2 mousePos;
         private bool isOnTopOfOven = false; 
         public static bool isReleased = false;
+
+        void Update() {
+            if(isOnTopOfOven && isReleased) {
+                transform.position = new Vector2(originalX, originalY);
+            }
+        }
+        
         void OnMouseDown() {
             isReleased = false;
             xPos = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
@@ -24,19 +31,13 @@ namespace TIKO4A2021
 
         void OnMouseUp() {
             isReleased = true;
-                transform.position = new Vector2(originalX, originalY);
+            transform.position = new Vector2(originalX, originalY);
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if(collision.tag == "Oven") {
                 isOnTopOfOven = true;
             }
-        }
-
-        private void OnTriggerStay2D(Collider2D collision) {
-                if(collision.tag == "Oven" && isOnTopOfOven && isReleased) {
-                    transform.position = new Vector2(originalX, originalY);
-                }
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
