@@ -6,19 +6,19 @@ namespace TIKO4A2021
 {
     public class TerrainCreator : MonoBehaviour {
         public GameObject terrain;
-        private bool isCreated = true;
+        private bool isCreated = false;
         private float xPos = 0;
-
-        void Awake() {
-            Instantiate(terrain, new Vector2(xPos, 0), Quaternion.identity);
-        }
         void Update() {
-            if((int)Camera.main.transform.position.x % 900 != 0 && !isCreated) {
-                Instantiate(terrain, new Vector2(xPos + 6.5f, 0), Quaternion.identity);
+            if((int)Camera.main.transform.position.x % 900 == 0 && !isCreated) {
+                Instantiate(terrain, new Vector2(xPos, 0), Quaternion.identity);
                 isCreated = true;
-            }else if((int)Camera.main.transform.position.x % 500 != 0 && isCreated) {
-                xPos += 1000;
-                isCreated = false;
+            }
+            if((int)Camera.main.transform.position.x % 500 == 0 && isCreated) {
+                if((int)Camera.main.transform.position.x == 0) {}
+                else {
+                    isCreated = false;
+                    xPos += 1004.5f;
+                }
             }
         }
     }
