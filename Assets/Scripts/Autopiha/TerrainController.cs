@@ -23,8 +23,8 @@ namespace TIKO4A2021 {
 
             for(int i = 2; i < amountOfPoints + 2; i++) {
                 shape.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
-                shape.spline.SetLeftTangent(i, new Vector2(-1.8f, 0));
-                shape.spline.SetRightTangent(i, new Vector2(1.8f, 0));
+                shape.spline.SetLeftTangent(i, new Vector2(-2f, 0));
+                shape.spline.SetRightTangent(i, new Vector2(2f, 0));
             }
         }
     }
