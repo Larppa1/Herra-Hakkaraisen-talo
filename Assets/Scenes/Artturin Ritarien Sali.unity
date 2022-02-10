@@ -368,12 +368,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 39d14608e5715f249ba397bb414811ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a92ac5c11db7d54a8745106ab8ecd13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.84, y: 4.27}
+  m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -387,8 +387,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64459007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.09, y: 1.52, z: 10.883565}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: -9.97, y: 0.82, z: 10.883565}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1622685631}
   m_RootOrder: 0
@@ -643,10 +643,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1333623782930812246, guid: 132a271577f18eb43b5b149f2da8e97d, type: 3}
-  maxX: 15
   minX: 15
-  maxY: -2.2
+  maxX: 15
   minY: -2.2
+  maxY: -2.2
+  timer: 0
   oddOrEven: even
 --- !u!4 &366126586
 Transform:
@@ -3281,8 +3282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9dc4c303fafbc439c46d4388078cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingEnemies: {fileID: 1020560895}
   wave: {fileID: 1040321016}
+  remainingEnemies: {fileID: 1020560895}
   gameManager: {fileID: 495727833}
 --- !u!114 &1624284101
 MonoBehaviour:
@@ -3853,10 +3854,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1333623782930812246, guid: dc2e86ada531e4c49977c6050f6d9c00, type: 3}
-  maxX: -9
   minX: -9
-  maxY: -2.2
+  maxX: -9
   minY: -2.2
+  maxY: -2.2
+  timer: 0
   oddOrEven: odd
 --- !u!4 &1959864492
 Transform:
