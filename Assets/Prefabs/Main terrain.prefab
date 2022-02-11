@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2154293664660473901}
   - component: {fileID: 2154293664660473900}
   - component: {fileID: 2154293664660473891}
+  - component: {fileID: 5458820805173565532}
   m_Layer: 0
   m_Name: Main terrain
   m_TagString: Untagged
@@ -175,3 +176,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shape: {fileID: 2154293664660473900}
   scale: 1000
+--- !u!60 &5458820805173565532
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154293664660473890}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 80deece70f71c8c4ea5d3519f9672ef6, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.030930758, y: 2.9001122}
+      - {x: -2.7655797, y: 0.86832833}
+      - {x: -1.6974075, y: -2.419167}
+      - {x: 1.7592695, y: -2.4191666}
+      - {x: 2.827441, y: 0.86832875}

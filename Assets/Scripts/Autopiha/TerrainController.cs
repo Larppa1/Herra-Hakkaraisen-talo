@@ -18,13 +18,13 @@ namespace TIKO4A2021 {
 
             for(int i = 0; i < amountOfPoints; i++) {
                 float xPos = shape.spline.GetPosition(i + 1).x + distanceBetweenPoints;
-                shape.spline.InsertPointAt(i + 2, new Vector2(xPos, 18 * Mathf.PerlinNoise(i * Random.Range(5.0f, 25.0f), 0)));
+                shape.spline.InsertPointAt(i + 2, new Vector2(xPos, 12 * Mathf.PerlinNoise(i * Random.Range(5.0f, 14.0f), 0)));
             }
 
             for(int i = 2; i < amountOfPoints + 2; i++) {
                 shape.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
-                shape.spline.SetLeftTangent(i, new Vector2(-2f, 0));
-                shape.spline.SetRightTangent(i, new Vector2(2f, 0));
+                shape.spline.SetLeftTangent(i, new Vector2(-2.5f, 0));
+                shape.spline.SetRightTangent(i, new Vector2(2.5f, 0));
             }
         }
     }
