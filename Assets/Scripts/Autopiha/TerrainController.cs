@@ -29,7 +29,6 @@ namespace TIKO4A2021 {
                 }else if(i % 10 == 0) {
                     Instantiate(coin, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                 }
-                print(transform.TransformPoint(shape.spline.GetPosition(i)));
             }
 
             for(int i = 2; i < amountOfPoints + 2; i++) {
