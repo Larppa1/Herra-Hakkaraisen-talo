@@ -23,15 +23,14 @@ namespace TIKO4A2021 {
                 if(i == 0) {
                     
                 }else if(i % 80 == 0) {
-                    Instantiate(coin3, new Vector2(shape.spline.GetPosition(i).x + ScoreSystem.offset, shape.spline.GetPosition(i).y + 1), transform.rotation);
+                    Instantiate(coin3, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                 }else if(i % 40 == 0) {
-                    Instantiate(coin2, new Vector2(shape.spline.GetPosition(i).x + ScoreSystem.offset, shape.spline.GetPosition(i).y + 1), transform.rotation);
+                    Instantiate(coin2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                 }else if(i % 10 == 0) {
-                    Instantiate(coin, new Vector2(shape.spline.GetPosition(i).x + ScoreSystem.offset, shape.spline.GetPosition(i).y + 1), transform.rotation);
+                    Instantiate(coin, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                 }
+                print(transform.TransformPoint(shape.spline.GetPosition(i)));
             }
-
-            ScoreSystem.offset += 1000f;
 
             for(int i = 2; i < amountOfPoints + 2; i++) {
                 shape.spline.SetTangentMode(i, ShapeTangentMode.Continuous);

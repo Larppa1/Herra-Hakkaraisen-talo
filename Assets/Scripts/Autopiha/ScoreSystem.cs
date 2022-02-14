@@ -8,7 +8,6 @@ namespace TIKO4A2021 {
         private int score;
         public Transform player;
         public Text scoreText;
-        public static float offset = 0;
 
         void Update() {
             if((int)player.position.x == score + 1 && player.position.x > 0) {
