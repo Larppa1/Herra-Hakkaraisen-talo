@@ -174,8 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513ab0bbb7c7d8b4eab2ba8e312baa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shape: {fileID: 2154293664660473900}
   scale: 1000
+  coin: {fileID: 1503208108850241639, guid: 9a3d5c663a46bcd4186b8b0ea3762336, type: 3}
+  coin2: {fileID: 3214714856735623641, guid: b617f0c4ed60ef249993be4ef45bf35b, type: 3}
+  coin3: {fileID: 6253529246192391888, guid: 8914b03317a832f4c9fd16902b2a49f8, type: 3}
 --- !u!60 &5458820805173565532
 PolygonCollider2D:
   m_ObjectHideFlags: 0

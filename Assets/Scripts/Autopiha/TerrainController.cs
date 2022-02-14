@@ -5,11 +5,12 @@ using UnityEngine.U2D;
 
 namespace TIKO4A2021 {
     public class TerrainController : MonoBehaviour {
-        public SpriteShapeController shape;
+        private SpriteShapeController shape;
         public int scale;
+        public GameObject coin, coin2, coin3;
 
-        void Start() {
-            shape = GetComponent<SpriteShapeController>();
+        void Awake() {
+            shape = this.GetComponent<SpriteShapeController>();
             int amountOfPoints = scale / 6;
             float distanceBetweenPoints = (float)scale / (float)amountOfPoints;
 
@@ -19,7 +20,18 @@ namespace TIKO4A2021 {
             for(int i = 0; i < amountOfPoints; i++) {
                 float xPos = shape.spline.GetPosition(i + 1).x + distanceBetweenPoints;
                 shape.spline.InsertPointAt(i + 2, new Vector2(xPos, 12 * Mathf.PerlinNoise(i * Random.Range(5.0f, 14.0f), 0)));
+                if(i == 0) {
+                    
+                }else if(i % 80 == 0) {
+                    Instantiate(coin3, new Vector2(shape.spline.GetPosition(i).x + ScoreSystem.offset, shape.spline.GetPosition(i).y + 1), transform.rotation);
+                }else if(i % 40 == 0) {
+                    Instantiate(coin2, new Vector2(shape.spline.GetPosition(i).x + ScoreSystem.offset, shape.spline.GetPosition(i).y + 1), transform.rotation);
+                }else if(i % 10 == 0) {
+                    Instantiate(coin, new Vector2(shape.spline.GetPosition(i).x + ScoreSystem.offset, shape.spline.GetPosition(i).y + 1), transform.rotation);
+                }
             }
+
+            ScoreSystem.offset += 1000f;
 
             for(int i = 2; i < amountOfPoints + 2; i++) {
                 shape.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
