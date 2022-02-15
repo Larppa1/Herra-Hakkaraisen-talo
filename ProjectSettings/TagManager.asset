@@ -16,6 +16,8 @@ TagManager:
   - DragonAnnihilator3000
   - Bowl
   - Oven
+  - JerryCan
+  - GasStation
   layers:
   - Default
   - TransparentFX

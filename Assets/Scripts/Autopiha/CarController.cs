@@ -20,7 +20,13 @@ namespace TIKO4A2021
 
         // Update is called once per frame
         void Update(){
-            input = -Input.GetAxisRaw("Horizontal");
+            if(!FuelBar.isGameOver){
+                input = -Input.GetAxisRaw("Horizontal");
+            }
+            else{
+                speed= 0;
+                torque = 0;
+            }
         }
     }
 }

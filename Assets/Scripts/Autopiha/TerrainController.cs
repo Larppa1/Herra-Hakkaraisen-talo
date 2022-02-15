@@ -7,7 +7,7 @@ namespace TIKO4A2021 {
     public class TerrainController : MonoBehaviour {
         private SpriteShapeController shape;
         public int scale;
-        public GameObject coin, coin2, coin3;
+        public GameObject coin, coin2, coin3, jerryCan;
 
         void Awake() {
             shape = this.GetComponent<SpriteShapeController>();
@@ -25,6 +25,7 @@ namespace TIKO4A2021 {
                 }else if(i % 80 == 0) {
                     Instantiate(coin3, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                 }else if(i % 40 == 0) {
+                    Instantiate(jerryCan, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+2)).x, transform.TransformPoint(shape.spline.GetPosition(i+2)).y + 1), transform.rotation);
                     Instantiate(coin2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                 }else if(i % 10 == 0) {
                     Instantiate(coin, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
