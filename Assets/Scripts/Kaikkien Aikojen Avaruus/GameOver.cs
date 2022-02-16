@@ -8,21 +8,19 @@ namespace TIKO4A2021 {
     public class GameOver : MonoBehaviour {
         public GameObject gameOverPanel, coinBar;
         public Text lastScore, highScore;
-        public bool isPaused = false, isScoreUpdated = false;
+        private bool isScoreUpdated = false;
+
+        void Start() {
+            Time.timeScale = 1;
+        }
 
         void Update() {
             if(GameObject.FindGameObjectWithTag("Player") == null) {
-                isPaused = true;
+                Time.timeScale = 0;
                 MeteorProperties.coinCount = 0;
                 MeteorProperties.meteorCount = 0;
                 gameOverPanel.SetActive(true);
                 coinBar.SetActive(false);
-            }
-
-            if(isPaused) {
-                Time.timeScale = 0;
-            }else {
-                Time.timeScale = 1;
             }
 
             if(gameOverPanel.activeSelf && isScoreUpdated == false) {
@@ -37,7 +35,7 @@ namespace TIKO4A2021 {
         }
 
         public void Restart() {
-            isPaused = false;
+            Time.timeScale = 1;
             isScoreUpdated = false;
             CoinManager.amount = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

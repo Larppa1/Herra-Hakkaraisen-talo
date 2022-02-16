@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TIKO4A2021{
     public class KitchenDifficulty : MonoBehaviour{
         public GameObject gameManager, difficultyPanel;
-        public static float roundTime;
+        public static float roundTime = -1;
         public void KitchenDifficultyLevel(string difficultyLevel){
             switch(difficultyLevel){
                 case "easy":

@@ -7,7 +7,7 @@ namespace TIKO4A2021
 {
     public class ReceptChecker : MonoBehaviour{
         // Start is called before the first frame update
-        private int score = 0;
+        public static int score = 0;
         private float timer = 4;
         private string[] receptArray1, receptArray2, receptArray3, receptArray4;
         private string[][] receptArrayArray;

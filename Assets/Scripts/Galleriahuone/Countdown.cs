@@ -8,6 +8,7 @@ namespace TIKO4A2021 {
         public Text countdowntext;
         public GameObject topLeft, topRight, bottomLeft, bottomRight, readyButton;
         private SpriteRenderer topLeftRenderer, topRightRenderer, bottomLeftRenderer, bottomRightRenderer;
+        public static float coloringTimer = 0;
         void Update() {
             if(GalleryDifficulty.countSize>0){
                 GalleryDifficulty.countSize -= Time.deltaTime;
@@ -17,9 +18,13 @@ namespace TIKO4A2021 {
                 topRight.GetComponent<SpriteRenderer>().color = Color.white;
                 bottomLeft.GetComponent<SpriteRenderer>().color = Color.white;
                 bottomRight.GetComponent<SpriteRenderer>().color = Color.white;
+
                 ColorChecker.counted = true;
                 GalleryDifficulty.countSize--;
                 readyButton.SetActive(true);
+
+            }else if((int)GalleryDifficulty.countSize == -1) {
+                coloringTimer += Time.deltaTime;
             }
         }
     }

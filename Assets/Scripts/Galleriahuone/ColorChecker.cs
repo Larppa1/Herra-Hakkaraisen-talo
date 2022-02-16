@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class ColorChecker : MonoBehaviour {
         public Button readyBtn;
-        public GameObject topLeft, topRight, bottomLeft, bottomRight;
+        public GameObject topLeft, topRight, bottomLeft, bottomRight, colorPalette, menuBtn, gameOverPanel;
         private static Color topLeftColored, topRightColored, bottomLeftColored, bottomRightColored;
         public static int score = 0;
         public static bool counted = false;
@@ -41,8 +41,23 @@ namespace TIKO4A2021 {
             if(bottomRightColored == galleryDictionary[imageArray[3]]) {
                 score++;
             }
+
+            if(Countdown.coloringTimer < 10) {
+                score += 6;
+            }else if(Countdown.coloringTimer < 20) {
+                score += 4;
+            }else if(Countdown.coloringTimer < 30) {
+                score += 2;
+            }
             
             readyBtn.gameObject.SetActive(false);
+            topLeft.SetActive(false);
+            topRight.SetActive(false);
+            bottomLeft.SetActive(false);
+            bottomRight.SetActive(false);
+            menuBtn.SetActive(false);
+            colorPalette.SetActive(false);
+            gameOverPanel.SetActive(true);
         }
     }
 }
