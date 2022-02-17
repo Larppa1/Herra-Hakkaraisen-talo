@@ -7,6 +7,7 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class GameOver : MonoBehaviour {
         public GameObject gameOverPanel, coinBar;
+        public Button menuBtn;
         public Text lastScore, highScore;
         private bool isScoreUpdated = false;
 
@@ -21,6 +22,7 @@ namespace TIKO4A2021 {
                 MeteorProperties.meteorCount = 0;
                 gameOverPanel.SetActive(true);
                 coinBar.SetActive(false);
+                menuBtn.gameObject.SetActive(false);
             }
 
             if(gameOverPanel.activeSelf && isScoreUpdated == false) {
