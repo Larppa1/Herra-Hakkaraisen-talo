@@ -6,9 +6,9 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class Goblin2 : MonoBehaviour {
         private Rigidbody2D goblinBody;
-        private float goblinSpeed = 3, xPos, yPos;
+        private float goblinSpeed = 2.5f, xPos, yPos;
         private Vector2 goblinDirection, plungerPos;
-        private bool isCaught = false;
+        private bool isCaught = false, hitBorder = false;
 
         void Start() {
             goblinBody = GetComponent<Rigidbody2D>();
@@ -33,8 +33,14 @@ namespace TIKO4A2021 {
             if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
-            } if(collision.tag == "Border") {
+            } if(collision.tag == "Border" && !hitBorder) {
+                hitBorder = true;
                 isCaught = false;
+                if(GoblinProperties.extras > 0){
+                    GoblinProperties.extras--;
+                }else{
+                    GoblinProperties.amount++;
+                }
                 PlungerProperties.isCaught = false;
                 Destroy(this.gameObject);
             }

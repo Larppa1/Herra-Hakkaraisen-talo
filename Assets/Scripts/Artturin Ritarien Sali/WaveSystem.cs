@@ -7,27 +7,30 @@ namespace TIKO4A2021 {
     public class WaveSystem : MonoBehaviour {
         public Text wave, remainingEnemies;
         public static int firstWaveEnemyCount, secondWaveEnemyCount, thirdWaveEnemyCount, waveNum, score;
-        public GameObject gameManager;
+        public GameObject gameManager, gameOverPanel;
         void Update() {
             switch(waveNum) {
                 case 0:
                 wave.text = "Ensimmäinen aalto";
-                remainingEnemies.text = "Vastustajia jäljellä: " + (firstWaveEnemyCount - GoblinProperties.amount).ToString();
+                remainingEnemies.text = "Vastustajia jäljellä: " + (firstWaveEnemyCount - GoblinProperties.amount).ToString() + " + " + GoblinProperties.extras.ToString();
                 if(GoblinProperties.amount == firstWaveEnemyCount && gameManager.activeSelf == true) {
                     waveNum++;
                 }break;
                 case 1:
                 wave.text = "Toinen aalto";
-                remainingEnemies.text = "Vastustajia jäljellä: " + (secondWaveEnemyCount - GoblinProperties.amount).ToString();
+                remainingEnemies.text = "Vastustajia jäljellä: " + (secondWaveEnemyCount - GoblinProperties.amount).ToString() + " + " + GoblinProperties.extras.ToString();
                 if(GoblinProperties.amount == secondWaveEnemyCount && gameManager.activeSelf == true) {
                     waveNum++;
                 }break;
                 case 2:
                 wave.text = "Kolmas aalto";
-                remainingEnemies.text = "Vastustajia jäljellä: " + (thirdWaveEnemyCount - GoblinProperties.amount).ToString();
+                remainingEnemies.text = "Vastustajia jäljellä: " + (thirdWaveEnemyCount - GoblinProperties.amount).ToString() + " + " + GoblinProperties.extras.ToString();
                 if(GoblinProperties.amount == thirdWaveEnemyCount && gameManager.activeSelf == true) {
                     waveNum++;
                 }break;
+                case 3:
+                gameOverPanel.SetActive(true);
+                break;
             }
         }
     }

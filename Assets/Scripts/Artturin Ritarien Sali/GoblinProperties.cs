@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace TIKO4A2021 {
     public class GoblinProperties : MonoBehaviour {
-        public static int amount = 0;
+        public static int amount = 0, extras = 0;
         public static float goblinSpeed = 3;
         public static bool godlyIntervention;
+        public static int amountSpawned=0;
     }
 }

@@ -12,24 +12,26 @@ namespace TIKO4A2021 {
         private float time = 0;
 
         void Update() {
+            if(GoblinProperties.amountSpawned == WaveSystem.thirdWaveEnemyCount){
+                this.gameObject.SetActive(false);
+            }
             timer += Time.deltaTime;
             timeSimplified = (int)timer;
-            
-            if((GoblinProperties.amount == WaveSystem.firstWaveEnemyCount || GoblinProperties.amount == WaveSystem.secondWaveEnemyCount) && time < 10) {
+            if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount) && time < 15) {
                 time += Time.deltaTime;
             }else if (oddOrEven == "odd" && timeSimplified % 2 == 0 && timeSimplified % 4 != 0 && isSpawned == false) {
                 float randomX = Random.Range(minX, maxX);
                 float randomY = Random.Range(minY, maxY);
                 Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
                 isSpawned = true;
-                GoblinProperties.amount++;
+                GoblinProperties.amountSpawned++;
             }else if(oddOrEven == "even" && timeSimplified % 4 == 0 && isSpawned == false) {
                 float randomX = Random.Range(minX, maxX);
                 float randomY = Random.Range(minY, maxY);
                 Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
                 isSpawned = true;
-                GoblinProperties.amount++;
-            }else if(time >= 10) {
+                GoblinProperties.amountSpawned++;
+            }else if(time >= 15) {
                 time = 0;
             }
 
@@ -38,6 +40,7 @@ namespace TIKO4A2021 {
                 if(randomSurprise == 1 || randomSurprise == 2) {
                     float randomX = Random.Range(minX, maxX);
                     float randomY = Random.Range(minY, maxY);
+                    GoblinProperties.extras++;
                     Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
                 }else {
                     isSpawned = false;
@@ -47,6 +50,7 @@ namespace TIKO4A2021 {
                 if(randomSurprise == 1 || randomSurprise == 2) {
                     float randomX = Random.Range(minX, maxX);
                     float randomY = Random.Range(minY, maxY);
+                    GoblinProperties.extras++;
                     Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
                 }else {
                     isSpawned = false;

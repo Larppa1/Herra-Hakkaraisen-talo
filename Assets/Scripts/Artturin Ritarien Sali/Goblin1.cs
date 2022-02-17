@@ -7,8 +7,8 @@ namespace TIKO4A2021 {
     public class Goblin1 : MonoBehaviour {
         private Rigidbody2D goblinBody;
         private Vector2 goblinDirection, plungerPos;
-        private float goblinSpeed = 3, xPos, yPos;
-        private bool isCaught = false;
+        private float goblinSpeed = 2.5f, xPos, yPos;
+        private bool isCaught = false, hitBorder = false;
 
         void Start() {
             goblinBody = GetComponent<Rigidbody2D>();
@@ -33,10 +33,15 @@ namespace TIKO4A2021 {
             if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
-            }else if(collision.tag == "Border") {
+            }else if(collision.tag == "Border" && !hitBorder) {
                 isCaught = false;
+                hitBorder = true;
                 PlungerProperties.isCaught = false;
-                WaveSystem.score++;
+                if(GoblinProperties.extras > 0){
+                    GoblinProperties.extras--;
+                }else{
+                    GoblinProperties.amount++;
+                }
                 Destroy(this.gameObject);
             }
         }
