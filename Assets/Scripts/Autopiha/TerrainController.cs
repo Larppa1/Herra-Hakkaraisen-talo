@@ -19,7 +19,11 @@ namespace TIKO4A2021 {
 
             for(int i = 0; i < amountOfPoints; i++) {
                 float xPos = shape.spline.GetPosition(i + 1).x + distanceBetweenPoints;
-                shape.spline.InsertPointAt(i + 2, new Vector2(xPos, 12 * Mathf.PerlinNoise(i * Random.Range(5.0f, 14.0f), 0)));
+                if(i < 5 || i > amountOfPoints - 5) {
+                    shape.spline.InsertPointAt(i + 2, new Vector2(xPos, 6 * Mathf.PerlinNoise(i * Random.Range(0.0f, 3.0f), 0)));
+                }else {
+                    shape.spline.InsertPointAt(i + 2, new Vector2(xPos, 11 * Mathf.PerlinNoise(i * Random.Range(5.0f, 14.0f), 0)));
+                }
                 if(i == 0) {
                     
                 }else if(i % 80 == 0) {

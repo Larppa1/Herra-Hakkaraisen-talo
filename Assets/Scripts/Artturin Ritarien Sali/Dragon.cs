@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TIKO4A2021 {
     public class Dragon : MonoBehaviour {
@@ -8,6 +9,7 @@ namespace TIKO4A2021 {
         private Vector2 dragonDirection;
         private float dragonSpeed = (float)0.3;
         public GameObject gameOverPanel;
+        public Text scoreText;
 
         void Start() {
             dragonBody = GetComponent<Rigidbody2D>();
@@ -29,6 +31,8 @@ namespace TIKO4A2021 {
         private void OnTriggerEnter2D(Collider2D collision) {
             if(collision.tag == "DragonAnnihilator3000") {
                 gameOverPanel.SetActive(true);
+                scoreText.text = "Pisteet: " + (WaveSystem.score).ToString();
+                Time.timeScale = 0;
             }
         }
         
