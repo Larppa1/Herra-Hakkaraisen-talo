@@ -8,53 +8,44 @@ namespace TIKO4A2021 {
         public float minX, maxX, minY, maxY, timer = 0;
         public string oddOrEven;
         private int timeSimplified, randomSurprise;
-        private bool isSpawned = false;
-        private float time = 0;
+        //private float time = 0;
+        private bool isFirstTime = true;
 
-        void Update() {
-            if(GoblinProperties.amountSpawned == WaveSystem.thirdWaveEnemyCount){
-                this.gameObject.SetActive(false);
+        void OnEnable() {
+            this.gameObject.SetActive(false);
+
+            if(GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount) {
+                Invoke("Spawn", 15);
+            }else if(isFirstTime && oddOrEven == "odd") {
+                Invoke("Spawn", 0);
+            }else if(isFirstTime && oddOrEven == "even") {
+                Invoke("Spawn", 2);
+            }else {
+                Invoke("Spawn", 4);
             }
-            timer += Time.deltaTime;
-            timeSimplified = (int)timer;
-            if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount) && time < 15) {
-                time += Time.deltaTime;
-            }else if (oddOrEven == "odd" && timeSimplified % 2 == 0 && timeSimplified % 4 != 0 && isSpawned == false) {
+            isFirstTime = false;
+        }
+
+        private void Spawn() {
+            if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount)) return;
+
+            float randomX = Random.Range(minX, maxX);
+            float randomY = Random.Range(minY, maxY);
+            Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
+            GoblinProperties.amountSpawned++;
+            this.gameObject.SetActive(true);
+            
+            SpawnRandom();
+        }
+
+        private void SpawnRandom() {
+            randomSurprise = Random.Range(1, 10);
+
+            if(randomSurprise == 1 || randomSurprise == 2) {
                 float randomX = Random.Range(minX, maxX);
                 float randomY = Random.Range(minY, maxY);
+                GoblinProperties.extras++;
                 Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
-                isSpawned = true;
-                GoblinProperties.amountSpawned++;
-            }else if(oddOrEven == "even" && timeSimplified % 4 == 0 && isSpawned == false) {
-                float randomX = Random.Range(minX, maxX);
-                float randomY = Random.Range(minY, maxY);
-                Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
-                isSpawned = true;
-                GoblinProperties.amountSpawned++;
-            }else if(time >= 15) {
-                time = 0;
-            }
-
-            if(oddOrEven == "odd" && timeSimplified % 4 == 0 && isSpawned == true) {
-                randomSurprise = Random.Range(1, 10);
-                if(randomSurprise == 1 || randomSurprise == 2) {
-                    float randomX = Random.Range(minX, maxX);
-                    float randomY = Random.Range(minY, maxY);
-                    GoblinProperties.extras++;
-                    Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
-                }else {
-                    isSpawned = false;
-                }
-            }else if(oddOrEven == "even" && timeSimplified % 2 == 0 && timeSimplified % 4 != 0 && isSpawned == true) {
-                randomSurprise = Random.Range(1, 10);
-                if(randomSurprise == 1 || randomSurprise == 2) {
-                    float randomX = Random.Range(minX, maxX);
-                    float randomY = Random.Range(minY, maxY);
-                    GoblinProperties.extras++;
-                    Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
-                }else {
-                    isSpawned = false;
-                }
             }
         }
     }

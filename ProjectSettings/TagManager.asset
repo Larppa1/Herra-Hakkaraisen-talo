@@ -18,6 +18,7 @@ TagManager:
   - Oven
   - JerryCan
   - GasStation
+  - Ground
   layers:
   - Default
   - TransparentFX

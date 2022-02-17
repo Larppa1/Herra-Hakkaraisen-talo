@@ -7,6 +7,10 @@ namespace TIKO4A2021 {
         public static int amount = 0, extras = 0;
         public static float goblinSpeed = 3;
         public static bool godlyIntervention;
-        public static int amountSpawned=0;
+        public static double amountSpawned = 0;
+
+        void Update() {
+            print(GoblinProperties.amountSpawned);
+        }
     }
 }
