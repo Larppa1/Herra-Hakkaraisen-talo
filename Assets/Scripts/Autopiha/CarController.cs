@@ -20,7 +20,7 @@ namespace TIKO4A2021
         // Update is called once per frame
         void Update(){
             if(!FuelBar.isGameOver){
-                input = -Input.GetAxisRaw("Horizontal");
+                input = -ButtonHandler.direction;
             }
             else{
                 speed= 0;

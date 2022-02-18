@@ -11,8 +11,8 @@ namespace TIKO4A2021
         private float timer = 4;
         private string[] receptArray1, receptArray2, receptArray3, receptArray4;
         private string[][] receptArrayArray;
-        public GameObject topLeft, topRight, bottomLeft, bottomRight;
-        private GameObject[] squareArray;
+        public Image topLeft, topRight, bottomLeft, bottomRight;
+        private Image[] squareArray;
         private bool isTimerOn = false;
         public Text totalScore, timerText;
         private int random;
@@ -23,9 +23,9 @@ namespace TIKO4A2021
             receptArray3 = new string[]{"eggs", "flour", "ketchup", "milk"};
             receptArray4 = new string[]{"ketchup", "flour", "sugar", "milk"};
             receptArrayArray = new string[][] {receptArray1, receptArray2, receptArray3, receptArray4};
-            squareArray = new GameObject[]{topLeft, topRight, bottomLeft, bottomRight};
+            squareArray = new Image[]{topLeft, topRight, bottomLeft, bottomRight};
             random = Random.Range(0,4);
-            squareArray[random].SetActive(true);
+            squareArray[random].gameObject.SetActive(true);
         }
         void Update(){
             if(isTimerOn){
@@ -34,13 +34,13 @@ namespace TIKO4A2021
                 timerText.text = ((int)timer).ToString();
             }
             if(timer < 1){
-                squareArray[random].SetActive(false);
+                squareArray[random].gameObject.SetActive(false);
                 isTimerOn = false;
                 timerText.gameObject.SetActive(false);
                 timer = 4;
                 totalScore.text = "Pisteesi: " + (score).ToString();
                 random = Random.Range(0,4);
-                squareArray[random].SetActive(true);
+                squareArray[random].gameObject.SetActive(true);
             }
         }
         private void OnTriggerEnter2D(Collider2D collision){

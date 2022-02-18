@@ -14,6 +14,8 @@ namespace TIKO4A2021 {
             DragonSpeed.shakeIsActive = false;
             ColorChecker.score = 0;
             ColorChecker.counted = false;
+            Countdown.coloringTimer = 0;
+            KitchenDifficulty.roundTime = -1;
         }
     }
 }

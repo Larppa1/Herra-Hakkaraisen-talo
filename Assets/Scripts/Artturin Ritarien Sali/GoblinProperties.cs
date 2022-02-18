@@ -8,9 +8,5 @@ namespace TIKO4A2021 {
         public static float goblinSpeed = 3;
         public static bool godlyIntervention;
         public static double amountSpawned = 0;
-
-        void Update() {
-            print(GoblinProperties.amountSpawned);
-        }
     }
 }

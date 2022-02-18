@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Kartta.unity
+    guid: 45866fda79eb3ca4790d9bec653b360b
+  - enabled: 1
+    path: Assets/Scenes/Kaikkien Aikojen Avaruus.unity
+    guid: 7c8c2e9246c7bd8488f7f30de557f4df
   - enabled: 1
     path: Assets/Scenes/Artturin Ritarien Sali.unity
     guid: 71cce23880644554885196c11933c21f
@@ -15,15 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Galleriahuone.unity
     guid: 8c1dcfc6135a7094c9b26c4fac495a56
   - enabled: 1
-    path: Assets/Scenes/Kaikkien Aikojen Avaruus.unity
-    guid: 7c8c2e9246c7bd8488f7f30de557f4df
-  - enabled: 1
-    path: Assets/Scenes/Kartta.unity
-    guid: 45866fda79eb3ca4790d9bec653b360b
+    path: Assets/Scenes/Herra Hakkaraisen koti.unity
+    guid: 6408f377d387d0f4da088fd10889da94
   - enabled: 1
     path: Assets/Scenes/Autopiha.unity
     guid: 4b31676f57ebee04cb44213e29731af4
-  - enabled: 1
-    path: Assets/Scenes/Herra Hakkaraisen koti.unity
-    guid: 6408f377d387d0f4da088fd10889da94
   m_configObjects: {}

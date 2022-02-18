@@ -19,18 +19,18 @@ namespace TIKO4A2021 {
         //If user presses key to go up or down, the method uses DOTween to angle the bus up or down, depending on
         //the direction. When user stops pressing the key, the bus will rotate back to original angle.
         void Update() {
-            float directionY = Input.GetAxisRaw("Vertical");
+            float directionY = ButtonHandler.direction;
             busDirection = new Vector2(0, directionY).normalized;
 
             //Rotation 2 degrees up if user input is arrow up or W. Rotation 2 degrees down if user input is arrow down or S.
-            if(Input.GetKey("up")) {
+            if(ButtonHandler.direction == 1) {
                 transform.DORotate(new Vector3(0, 0, 2), 0).SetEase(Ease.Linear);
-            }else if(Input.GetKey("down")) {
+            }else if(ButtonHandler.direction == -1) {
                 transform.DORotate(new Vector3(0, 0, -2), 0).SetEase(Ease.Linear);
             }
 
             //Rotation back to original level when user stops pressing arrow up, arrow down, W or S.
-            if(Input.GetKeyUp("up") || Input.GetKeyUp("down")) {
+            if(ButtonHandler.direction == 0) {
                 transform.DORotate(new Vector3(0, 0, 0), 0).SetEase(Ease.Linear);
             }
         }
