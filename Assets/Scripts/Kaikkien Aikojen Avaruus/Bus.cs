@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 namespace TIKO4A2021 {
     public class Bus : MonoBehaviour {
         public float busSpeed;
         private Rigidbody2D busBody;
-        private Vector2 busDirection;
+        public static Vector2 busDirection;
 
         //Method Start gets Rigidbody2D from Bus GameObject and saves it to variable busBody.
         void Start() {
