@@ -22,14 +22,15 @@ namespace TIKO4A2021{
             }else if(current < 0){
                 current = 0;
             }
-            GetCurrentFill();
-        }
-        void FixedUpdate(){
             if(current > 0){
-                current -= 1/timerSize;
+                current -= Time.deltaTime;
             }else{
                 isGameOver = true;
             }
+            GetCurrentFill();
+        }
+        void FixedUpdate(){
+
         }
 
         void GetCurrentFill(){
