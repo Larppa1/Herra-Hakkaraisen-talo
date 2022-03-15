@@ -25,6 +25,8 @@ namespace TIKO4A2021
             else{
                 speed= 0;
                 torque = 0;
+                isFlipped = true;
+                GameOver();
             }
         }
 
@@ -42,9 +44,9 @@ namespace TIKO4A2021
 
         private void GameOver() {
             if(!isFlipped) return;
-
             gameOverCanvas.gameObject.SetActive(true);
             mainCanvas.gameObject.SetActive(false);
+            isFlipped = false;
         }
     }
 }

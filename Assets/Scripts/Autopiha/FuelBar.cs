@@ -7,12 +7,10 @@ namespace TIKO4A2021{
     public class FuelBar : MonoBehaviour{
         //Gameoverpanel
         public static bool isGameOver = false;
-        public static float timer;
-        public static float current;
+        public static float timer, current;
         private int max = 100;
-        public float timerSize;
+        [SerializeField] private float timerSize;
         public Image mask;
-        //public int offset;
 
         // Update is called once per frame
         void Awake(){
@@ -24,17 +22,18 @@ namespace TIKO4A2021{
             }else if(current < 0){
                 current = 0;
             }
+            GetCurrentFill();
+        }
+        void FixedUpdate(){
             if(current > 0){
                 current -= 1/timerSize;
             }else{
-                //gameOverPanel.setActive(true);
                 isGameOver = true;
             }
-            GetCurrentFill();
         }
 
         void GetCurrentFill(){
-            float fillAmount = (float)current / (float)max;
+            float fillAmount = current / (float)max;
             mask.fillAmount = fillAmount;
         }
 

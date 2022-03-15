@@ -16,6 +16,7 @@ namespace TIKO4A2021 {
             ColorChecker.counted = false;
             Countdown.coloringTimer = 0;
             KitchenDifficulty.roundTime = -1;
+            FuelBar.isGameOver = false;
         }
     }
 }
