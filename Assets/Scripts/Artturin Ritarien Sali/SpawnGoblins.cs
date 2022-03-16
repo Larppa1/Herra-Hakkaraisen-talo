@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TIKO4A2021 {
     public class SpawnGoblins : MonoBehaviour {
+        [SerializeField] Text timerText;
         public GameObject obstacle;
         public float minX, maxX, minY, maxY, timer = 0;
         public string oddOrEven;
         private int timeSimplified, randomSurprise;
         //private float time = 0;
-        private bool isFirstTime = true;
+        private bool isFirstTime = true, isOnbreak = false;
 
         void OnEnable() {
             this.gameObject.SetActive(false);
-
-            if(GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount) {
-                Invoke("Spawn", 15);
+            if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount)
+            || GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount-1 || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount-1) {
+                if(oddOrEven == "odd") timerText.gameObject.SetActive(true);
+                isOnbreak = true;
+                Invoke("Spawn", 20);
             }else if(isFirstTime && oddOrEven == "odd") {
                 Invoke("Spawn", 0);
             }else if(isFirstTime && oddOrEven == "even") {
@@ -27,8 +31,9 @@ namespace TIKO4A2021 {
         }
 
         private void Spawn() {
-            if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount)) return;
+            if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount) && !isOnbreak) return;
 
+            isOnbreak = false;
             float randomX = Random.Range(minX, maxX);
             float randomY = Random.Range(minY, maxY);
             Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
@@ -48,5 +53,6 @@ namespace TIKO4A2021 {
                 Instantiate(obstacle, transform.position = new Vector2(randomX, randomY), transform.rotation);
             }
         }
+
     }
 }
