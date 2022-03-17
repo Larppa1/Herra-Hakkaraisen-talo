@@ -74,7 +74,7 @@ SpriteShapeRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
@@ -179,6 +179,8 @@ MonoBehaviour:
   coin2: {fileID: 3214714856735623641, guid: b617f0c4ed60ef249993be4ef45bf35b, type: 3}
   coin3: {fileID: 6253529246192391888, guid: 8914b03317a832f4c9fd16902b2a49f8, type: 3}
   jerryCan: {fileID: 1903242789536389812, guid: 2f385e36bdfa4574381004c4557b2762, type: 3}
+  tree1: {fileID: 775108065561505120, guid: 88bd3c23b4a327548ba8dd34640b50d5, type: 3}
+  tree2: {fileID: 8515649404999375298, guid: a69af76f0a6f7fa46862255dfb0ab430, type: 3}
 --- !u!60 &5458820805173565532
 PolygonCollider2D:
   m_ObjectHideFlags: 0

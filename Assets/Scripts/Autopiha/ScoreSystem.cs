@@ -8,10 +8,11 @@ namespace TIKO4A2021 {
         public static int score;
         public Transform player;
         public Text scoreText;
+        private int offset = 7;
 
         void Update() {
-            if((int)player.position.x > 0 && (int) player.position.x > score) {
-                score = (int)player.position.x;
+            if((int)player.position.x > offset && (int) player.position.x - offset > score) {
+                score = (int)player.position.x - offset;
                 scoreText.text = ((int)score).ToString();
             }
         }
