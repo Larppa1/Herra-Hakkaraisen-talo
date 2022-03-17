@@ -2231,6 +2231,7 @@ MonoBehaviour:
   car: {fileID: 1216207842}
   mainCanvas: {fileID: 1586689264}
   gameOverCanvas: {fileID: 1789377981}
+  finalScoreText: {fileID: 520945306}
   torque: -50
   speed: 250
 --- !u!114 &1216207847

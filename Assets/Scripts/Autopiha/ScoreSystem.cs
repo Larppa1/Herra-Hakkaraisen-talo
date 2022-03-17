@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace TIKO4A2021 {
     public class ScoreSystem : MonoBehaviour {
-        private int score;
+        public static int score;
         public Transform player;
         public Text scoreText;
 

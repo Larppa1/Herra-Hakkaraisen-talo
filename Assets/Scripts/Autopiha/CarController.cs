@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TIKO4A2021
 {
     public class CarController : MonoBehaviour{
         public Rigidbody2D frontWheel, backWheel, car;
         public Canvas mainCanvas, gameOverCanvas;
+        public Text finalScoreText;
         public float torque = -100f, speed = 50f;
         float input;
         private bool isFlipped;
@@ -26,7 +28,7 @@ namespace TIKO4A2021
                 speed= 0;
                 torque = 0;
                 isFlipped = true;
-                GameOver();
+                Invoke("GameOver", 3);
             }
         }
 
@@ -46,6 +48,7 @@ namespace TIKO4A2021
             if(!isFlipped) return;
             gameOverCanvas.gameObject.SetActive(true);
             mainCanvas.gameObject.SetActive(false);
+            finalScoreText.text = "Pisteet: " + ((int)ScoreSystem.score).ToString();
             isFlipped = false;
         }
     }
