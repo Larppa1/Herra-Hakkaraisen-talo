@@ -14,6 +14,7 @@ namespace TIKO4A2021 {
         private bool isFirstTime = true, isOnbreak = false;
 
         void OnEnable() {
+            if(GoblinProperties.amountSpawned == WaveSystem.thirdWaveEnemyCount) return;
             this.gameObject.SetActive(false);
             if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount)
             || GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount-1 || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount-1) {

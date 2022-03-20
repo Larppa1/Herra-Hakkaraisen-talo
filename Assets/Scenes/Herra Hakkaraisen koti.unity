@@ -734,7 +734,6 @@ MonoBehaviour:
   bottomLeft: {fileID: 2015858246}
   bottomRight: {fileID: 1757218904}
   totalScore: {fileID: 1393508465}
-  timerText: {fileID: 2013859162}
 --- !u!1 &220780044
 GameObject:
   m_ObjectHideFlags: 0

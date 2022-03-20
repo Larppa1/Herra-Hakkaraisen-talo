@@ -32,33 +32,33 @@ namespace TIKO4A2021 {
                     Instantiate(coin3, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                     int treePicker = Random.Range(0, 2);
                     if(treePicker == 0) {
-                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 4), transform.rotation);
+                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 3), transform.rotation);
                     }else {
-                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+2)).x, transform.TransformPoint(shape.spline.GetPosition(i+2)).y + 4), transform.rotation);
+                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+2)).x, transform.TransformPoint(shape.spline.GetPosition(i+2)).y + 3), transform.rotation);
                     }
                 }else if(i % 40 == 0) {
                     Instantiate(jerryCan, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+2)).x, transform.TransformPoint(shape.spline.GetPosition(i+2)).y + 1), transform.rotation);
                     Instantiate(coin2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                     int treePicker = Random.Range(0, 2);
                     if(treePicker == 0) {
-                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+2)).x, transform.TransformPoint(shape.spline.GetPosition(i+2)).y + 4), transform.rotation);
+                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+2)).x, transform.TransformPoint(shape.spline.GetPosition(i+2)).y + 3), transform.rotation);
                     }else {
-                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 4), transform.rotation);
+                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 3), transform.rotation);
                     }
                 }else if(i % 10 == 0) {
                     Instantiate(coin, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 1), transform.rotation);
                     int treePicker = Random.Range(0, 2);
                     if(treePicker == 0) {
-                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 4), transform.rotation);
+                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 3), transform.rotation);
                     }else {
-                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 4), transform.rotation);
+                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i+1)).x, transform.TransformPoint(shape.spline.GetPosition(i+1)).y + 3), transform.rotation);
                     }
                 }else if(i % 5 == 0) {
                     int treePicker = Random.Range(0, 2);
                     if(treePicker == 0) {
-                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 4), transform.rotation);
+                        Instantiate(tree1, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 3), transform.rotation);
                     }else {
-                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 4), transform.rotation);
+                        Instantiate(tree2, new Vector2(transform.TransformPoint(shape.spline.GetPosition(i)).x, transform.TransformPoint(shape.spline.GetPosition(i)).y + 3), transform.rotation);
                     }
                 }
             }
