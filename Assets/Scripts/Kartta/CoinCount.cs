@@ -10,5 +10,6 @@ namespace TIKO4A2021 {
         void Update() {
             coinAmount.text = (PlayerPrefs.GetInt("coinCount")).ToString();
         }
+
     }
 }

@@ -883,7 +883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714284196}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TIKO4A2021.SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714284196}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TIKO4A2021.SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -3157,7 +3157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1714284196}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TIKO4A2021.SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -4461,6 +4461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1714284197}
+  - component: {fileID: 1714284198}
   - component: {fileID: 1714284196}
   m_Layer: 0
   m_Name: Scene Loader
@@ -4495,6 +4496,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714284198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714284195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23314e20bf3d45f478e0d8b9de65bd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1774674556
 GameObject:
   m_ObjectHideFlags: 0

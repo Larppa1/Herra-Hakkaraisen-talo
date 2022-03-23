@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Autopiha.unity
     guid: 4b31676f57ebee04cb44213e29731af4
+  - enabled: 1
+    path: Assets/Scenes/LoadScreen.unity
+    guid: 5367e36defd9e6e4c9355a46be33a638
   m_configObjects: {}

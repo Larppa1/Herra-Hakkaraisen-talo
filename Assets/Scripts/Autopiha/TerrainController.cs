@@ -10,6 +10,7 @@ namespace TIKO4A2021 {
         public GameObject coin, coin2, coin3, jerryCan, tree1, tree2;
 
         void Awake() {
+            DontDestroyOnLoad(gameObject);
             shape = this.GetComponent<SpriteShapeController>();
             int amountOfPoints = scale / 6;
             float distanceBetweenPoints = (float)scale / (float)amountOfPoints;
