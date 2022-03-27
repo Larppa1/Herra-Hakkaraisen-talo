@@ -9,20 +9,22 @@ namespace TIKO4A2021 {
         public GameObject gameOverPanel, coinBar;
         public Button menuBtn;
         public Text lastScore, highScore;
-        private bool isScoreUpdated = false;
+        private bool isScoreUpdated = false, isGameLost = false;
 
         void Start() {
             Time.timeScale = 1;
+            isGameLost = false;
         }
 
         void Update() {
-            if(GameObject.FindGameObjectWithTag("Player") == null) {
+            if(GameObject.FindGameObjectWithTag("Player") == null && !isGameLost) {
                 Time.timeScale = 0;
                 MeteorProperties.coinCount = 0;
                 MeteorProperties.meteorCount = 0;
                 gameOverPanel.SetActive(true);
                 coinBar.SetActive(false);
                 menuBtn.gameObject.SetActive(false);
+                isGameLost = true;
             }
 
             if(gameOverPanel.activeSelf && isScoreUpdated == false) {
@@ -37,6 +39,7 @@ namespace TIKO4A2021 {
         }
 
         public void Restart() {
+            isGameLost = false;
             Time.timeScale = 1;
             isScoreUpdated = false;
             CoinManager.amount = 0;

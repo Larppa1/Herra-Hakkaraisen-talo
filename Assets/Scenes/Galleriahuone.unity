@@ -2442,7 +2442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1084910850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,6 +3140,7 @@ GameObject:
   - component: {fileID: 1139374907}
   - component: {fileID: 1139374908}
   - component: {fileID: 1139374909}
+  - component: {fileID: 1139374910}
   m_Layer: 0
   m_Name: Game Master
   m_TagString: Untagged
@@ -3234,6 +3235,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 851367933}
+--- !u!114 &1139374910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139374903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8676511ece268468265167979d7736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1146992102
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,6 +3949,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1139374910}
+        m_TargetAssemblyTypeName: TIKO4A2021.LoaderActivation, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1084910849}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1084910850}
         m_TargetAssemblyTypeName: TIKO4A2021.SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
@@ -3945,7 +3970,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Kartta
+          m_StringArgument: kartta
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1294942828

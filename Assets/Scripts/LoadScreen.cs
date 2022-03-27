@@ -80,7 +80,7 @@ namespace TIKO4A2021
             state = LoadingState.InProgress;
         }
         private IEnumerator FinalizeLoad(float waitTime){
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(waitTime - 1);
             SceneManager.UnloadSceneAsync(loadScreen);
             state = LoadingState.None;
         }
