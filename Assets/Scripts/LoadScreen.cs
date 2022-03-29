@@ -57,6 +57,7 @@ namespace TIKO4A2021
                     }
                 break;
                 case LoadingState.InProgress:
+                    SceneManager.SetActiveScene(scene);
                     foreach(GameObject item in loadScreen.GetRootGameObjects()){
                         Fader fader = item.GetComponentInChildren<Fader>();
                         if(fader != null){
