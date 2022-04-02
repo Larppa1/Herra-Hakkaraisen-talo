@@ -10,5 +10,8 @@ namespace TIKO4A2021 {
         void Update() {
             backgroundRenderer.material.mainTextureOffset += new Vector2(backgroundSpeed * Time.deltaTime, 0f);
         }
+        public void StopBackground(){
+            backgroundSpeed = 0;
+        }
     }
 }
