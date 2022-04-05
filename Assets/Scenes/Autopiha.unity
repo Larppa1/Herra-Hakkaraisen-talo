@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 2154293664660473890, guid: 8bb37dbed14eb294583506dab92ed6c6, type: 3}
-  midSection: {fileID: 7651729380279640159, guid: dce68dbed2da2484bbd412d663bc5ecb, type: 3}
+  midSection: {fileID: 91257859117350533, guid: 9d121c259bd225747bbf22f12afbd8e3, type: 3}
 --- !u!4 &313379542
 Transform:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 850, y: -550}
+  m_AnchoredPosition: {x: 800, y: -500}
   m_SizeDelta: {x: 100, y: 200}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &314195542
@@ -835,7 +835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -850, y: -550}
+  m_AnchoredPosition: {x: -800, y: -500}
   m_SizeDelta: {x: 100, y: 200}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &526167806
@@ -1922,7 +1922,7 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 6.937543, y: -3.4197438}
+  m_Anchor: {x: 7.2345934, y: -3.4197438}
   m_ConnectedAnchor: {x: 0.0000055183136, y: 0.000001818994}
   m_Suspension:
     m_DampingRatio: 0.2

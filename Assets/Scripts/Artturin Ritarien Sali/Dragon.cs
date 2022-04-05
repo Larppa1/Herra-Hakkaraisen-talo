@@ -10,6 +10,7 @@ namespace TIKO4A2021 {
         private float dragonSpeed = (float)0.3;
         public GameObject gameOverPanel;
         public Text scoreText;
+        private bool gameOver = false;
 
         void Start() {
             dragonBody = GetComponent<Rigidbody2D>();
@@ -29,8 +30,9 @@ namespace TIKO4A2021 {
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if(collision.tag == "DragonAnnihilator3000") {
+            if(collision.tag == "DragonAnnihilator3000" && !gameOver) {
                 gameOverPanel.SetActive(true);
+                gameOver = true;
                 scoreText.text = "Pisteet: " + (WaveSystem.score).ToString();
                 Time.timeScale = 0;
             }
