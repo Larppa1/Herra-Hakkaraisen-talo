@@ -10,7 +10,6 @@ namespace TIKO4A2021 {
         public float minX, maxX, minY, maxY, timer = 0;
         public string oddOrEven;
         private int timeSimplified, randomSurprise;
-        //private float time = 0;
         private bool isFirstTime = true, isOnbreak = false;
 
         void OnEnable() {
@@ -24,9 +23,9 @@ namespace TIKO4A2021 {
             }else if(isFirstTime && oddOrEven == "odd") {
                 Invoke("Spawn", 0);
             }else if(isFirstTime && oddOrEven == "even") {
-                Invoke("Spawn", 2);
+                Invoke("Spawn", 3);
             }else {
-                Invoke("Spawn", 4);
+                Invoke("Spawn", 6);
             }
             isFirstTime = false;
         }

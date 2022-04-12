@@ -21,6 +21,5 @@ namespace TIKO4A2021{
         public void OnPointerUp(PointerEventData eventData){
             direction = 0;
         }
-
     }
 }

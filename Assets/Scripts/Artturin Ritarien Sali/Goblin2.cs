@@ -33,18 +33,21 @@ namespace TIKO4A2021 {
             if(collision.tag == "Plunger") {
                 isCaught = true;
                 PlungerProperties.isCaught = true;
-            } if(collision.tag == "Border" && !hitBorder) {
-                hitBorder = true;
+            }if(collision.tag == "Border" && !hitBorder) {
                 isCaught = false;
                 if(GoblinProperties.extras > 0){
                     GoblinProperties.extras--;
                 }else{
                     GoblinProperties.amount++;
                 }
-                PlungerProperties.isCaught = false;
                 Destroy(this.gameObject);
             }
         }
 
+        private void OnTriggerExit2D(Collider2D collision) {
+            if(collision.tag == "Border" && !hitBorder) {
+                hitBorder = true;
+            }
+        }
     }
 }

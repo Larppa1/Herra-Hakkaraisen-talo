@@ -35,7 +35,6 @@ namespace TIKO4A2021 {
                 PlungerProperties.isCaught = true;
             }else if(collision.tag == "Border" && !hitBorder) {
                 isCaught = false;
-                hitBorder = true;
                 PlungerProperties.isCaught = false;
                 if(GoblinProperties.extras > 0){
                     GoblinProperties.extras--;
@@ -43,6 +42,12 @@ namespace TIKO4A2021 {
                     GoblinProperties.amount++;
                 }
                 Destroy(this.gameObject);
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision) {
+            if(collision.tag == "Border" && !hitBorder) {
+                hitBorder = true;
             }
         }
 
