@@ -13,7 +13,7 @@ namespace TIKO4A2021
         public Image topLeft, topRight, bottomLeft, bottomRight;
         private Image[] squareArray;
         public Text totalScore;
-        private int random;
+        private int random, lastRecept;
 
         void Start(){
             receptArray1 = new string[]{"eggs", "flour", "sugar", "milk"};
@@ -47,7 +47,10 @@ namespace TIKO4A2021
                     IngredientList.ingredientArray[i].SetActive(true);
                 }
                 squareArray[random].gameObject.SetActive(false);
-                random = Random.Range(0,4);
+                do {
+                    random = Random.Range(0,4);
+                }while(random == lastRecept);
+                lastRecept = random;
                 squareArray[random].gameObject.SetActive(true);
             }
         }

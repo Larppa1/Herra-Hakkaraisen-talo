@@ -6,14 +6,14 @@ using UnityEngine.UI;
 namespace TIKO4A2021 {
     public class SpawnGoblins : MonoBehaviour {
         [SerializeField] Text timerText;
-        public GameObject obstacle;
+        public GameObject obstacle, gameOverPanel;
         public float minX, maxX, minY, maxY, timer = 0;
         public string oddOrEven;
         private int timeSimplified, randomSurprise;
         private bool isFirstTime = true, isOnbreak = false;
 
         void OnEnable() {
-            if(GoblinProperties.amountSpawned == WaveSystem.thirdWaveEnemyCount) return;
+            if(GoblinProperties.amountSpawned == WaveSystem.thirdWaveEnemyCount) GameOver();
             this.gameObject.SetActive(false);
             if((GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount)
             || GoblinProperties.amountSpawned == WaveSystem.firstWaveEnemyCount-1 || GoblinProperties.amountSpawned == WaveSystem.secondWaveEnemyCount-1) {
@@ -54,5 +54,9 @@ namespace TIKO4A2021 {
             }
         }
 
+        private void GameOver() {
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
