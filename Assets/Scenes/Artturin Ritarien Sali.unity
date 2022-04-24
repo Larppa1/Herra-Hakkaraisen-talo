@@ -5769,8 +5769,8 @@ MonoBehaviour:
   timerText: {fileID: 660088235}
   obstacle: {fileID: 1103619175351411717, guid: 68e74b07070a2014882855b7af72ba11, type: 3}
   gameOverPanel: {fileID: 0}
-  minX: -9
-  maxX: -9
+  minX: -15
+  maxX: -15
   minY: -2.2
   maxY: -2.2
   timer: 0
