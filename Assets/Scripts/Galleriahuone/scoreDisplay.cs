@@ -9,7 +9,7 @@ namespace TIKO4A2021
         public Text scoreText;
 
         void Update(){
-            scoreText.text = "Pisteet: " + (ColorChecker.score).ToString() + " / 10";
+            scoreText.text = "Pisteet: " + (ColorChecker.score).ToString() + " / 5";
         }
 
     }
